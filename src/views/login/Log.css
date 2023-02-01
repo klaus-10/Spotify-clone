@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap");
+.log-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: white !important; */
+  height: auto !important;
+  width: 100vw;
+  min-height: 100% !important;
+  left: 0;
+  /* transition: all 350ms ease-in; */
+  position: absolute;
+  color: black;
+  background: linear-gradient(120deg, #2980b9, #8e44ad);
+}
+
+/* @media screen and (max-width: 400px) {
+  .log-container {
+    min-height: 106vh !important;
+  }
+} */
+
+/* //.sign-up */
+.sign-up:first-child {
+  margin-bottom: 0 !important;
+  margin-top: 20px;
+}
+/* .sign-up p {
+  margin: 0 !important;
+} */
+.sign-up {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 16px;
+  color: #666666;
+  padding-top: 15px;
+}
+.sign-up h5 {
+  margin: 0;
+  font-weight: 100;
+}
+.sign-up p {
+  color: #2691d9;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.sign-up p:hover {
+  text-decoration: underline;
+}
+
+/*container*/
+.log-container-box {
+  display: flex;
+  height: 100%;
+  /* background: whitesmoke; */
+  padding: 10px 0;
+  /* border-radius: 15px; */
+  justify-content: center;
+  align-items: center;
+  /* min-height: 50vh; */
+  border: solid 1px lightgray;
+  /* box-shadow: 0 0 4px rgba(0,0,0,0.4); */
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
+  background: whitesmoke;
+  /* top: 60px; */
+  border-radius: 15px;
+
+  /* max-height: 600px;
+  overflow-y: auto; */
+}
+
+.log-text {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.line {
+  height: 45vh !important;
+  width: 1px;
+  background: lightgray;
+  border-radius: 1px;
+}
+
+/* .register-box {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+} */
+
+.register-btn {
+  height: 50px !important;
+  border-radius: 25px !important;
+  margin-bottom: 30px;
+}
+
+.register-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-bottom: solid 1px lightgray;
+  padding: 30px 0;
+}
+
+.logIn-box .css-1x51dt5-MuiInputBase-input-MuiInput-input,
+.register-box .css-1x51dt5-MuiInputBase-input-MuiInput-input {
+  padding: 15px;
+}
+
+.register-title p {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+  margin: 0 !important;
+}
+
+.register-title h1 {
+  margin: 0 !important;
+  width: 100%;
+  text-align: center;
+}
+
+.logIn-box,
+.register-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* gap: 30px; */
+  gap: 10px;
+  /* padding: 30px; */
+  height: 100%;
+}
+
+/*log box*/
+.log-box {
+  /* width: 380px !important; 
+  height: 100%;
+  padding: 0 20px;
+  border-radius: 15px; */
+  /* max-height: 550px !important;
+  overflow-y: auto !important; */
+}
+
+@media screen and (max-width: 641px) {
+  .log-box {
+    width: 380px !important;
+    height: 100%;
+    padding: 0 20px;
+    border-radius: 15px;
+    max-height: 550px !important;
+    overflow-y: auto !important;
+  }
+}
+@media screen and (min-width: 641px) {
+  .log-box {
+    width: 380px !important;
+    height: 100%;
+    padding: 0 20px;
+    border-radius: 15px;
+    max-height: 630px !important;
+    overflow-y: auto !important;
+  }
+
+  /* .form {
+  max-height: 250px !important;
+  overflow-y: auto !important;
+} */
+
+  .log-box::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  /* Track */
+  .log-box::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  }
+
+  /* Handle */
+  .log-box::-webkit-scrollbar-thumb {
+    background: #aeb8cb;
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  .log-box::-webkit-scrollbar-thumb:hover {
+    background: rgb(150, 159, 176);
+  }
+}
+.signiIn-btn {
+  height: 50px !important;
+  border-radius: 25px !important;
+}
+
+/* autocomplete */
+.lang .css-eozd4h-MuiAutocomplete-root .MuiInput-root .MuiInput-input {
+  padding: 10px !important;
+}
+
+@media screen and (max-width: 500px) {
+  .log-box {
+    width: 280px !important;
+    height: 100%;
+  }
+
+  .logIn-box .css-1x51dt5-MuiInputBase-input-MuiInput-input,
+  .register-box .css-1x51dt5-MuiInputBase-input-MuiInput-input {
+    padding: 10px;
+  }
+
+  .logIn-box,
+  .register-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    /* padding: 30px; */
+    height: 100%;
+  }
+
+  .register-title {
+    padding: 20px 0;
+  }
+
+  .register-btn {
+    margin-bottom: 20px;
+  }
+}
+
+/* //search modale */
+.log-search-nominatim-box {
+  height: 400px;
+}
+
+.log-search-nominatim-box nav {
+  height: 100%;
+  overflow-y: auto;
+  max-height: 320px;
+}

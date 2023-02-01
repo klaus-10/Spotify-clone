@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// context
+// import { UserContex } from "./UserContext";
+import logo from "./logo.svg";
+import "./App.css";
+import Dashboard from "./views/dashboard/Dashboard";
+import Log from "./views/login/Log";
 
 function App() {
+  // stato generale app login user
+  // const [value, setValue] = useState(true);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // <UserContex.Provider value={{ value, setValue }}>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" exact element={<Dashboard />} />
+          <Route path="/log" exact element={<Log />} />
+        </Routes>
+      </div>
+    </Router>
+    // </UserContex.Provider>
   );
 }
 
