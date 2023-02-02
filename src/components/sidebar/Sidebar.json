@@ -16,9 +16,14 @@
             "icon": "login"
         },
         {
-            "text": "Product",
-            "link": "/product",
-            "icon": "inventory_2"
+            "text": "Category",
+            "link": "/category",
+            "icon": "category"
+        },
+        {
+            "text": "Saved",
+            "link": "/saved",
+            "icon": "saves"
         }
     ]
 }
