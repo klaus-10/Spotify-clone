@@ -13,6 +13,9 @@ import { Icon } from "@mui/material/";
 import InboxIcon from "@mui/icons-material/Inbox";
 import DraftsIcon from "@mui/icons-material/Drafts";
 
+// react router elements
+import { Link } from "react-router-dom";
+
 import elements from "./Sidebar.json";
 
 import "./Sidebar.css";
@@ -42,14 +45,13 @@ export default function Sidebar(props) {
         </ListItem>
 
         {/* sidebar logo avatar */}
-        <div style={{ padding: "10px 20px" }}>
+        {/* <div style={{ padding: "10px 20px" }}>
           <ListItem className="sidebar-logo-admin">
             <Avatar sx={{ bgcolor: "#637b92" }}>
-              {/* <NotificationsIcon /> */}A
             </Avatar>
             <ListItemText className="slide-admin-text" primary="Admin" />
           </ListItem>
-        </div>
+        </div> */}
 
         {/* sidebar list route */}
         <List component="nav" aria-label="main mailbox folders">
@@ -60,25 +62,27 @@ export default function Sidebar(props) {
             // <div>
             //   <h5>{el}</h5>
             // </div>
-            <ListItemButton
-              key={index}
-              selected={selectedIndex === index}
-              onClick={(event) => handleListItemClick(event, index)}
-            >
-              <ListItemIcon>
-                {/* <InboxIcon className="slide-icon" /> */}
-                {/* <FontAwesomeIcon className="slide-icon" icon={el?.icon}/> */}
-                {/* <Icon icon={el.name} /> */}
-                <Icon
-                  fontSize="small"
-                  className={selectedIndex === index ? "googleIconColor" : ""}
-                >
-                  {el.icon}
-                </Icon>
-                {/* <Icon fontSize="small">add_circle</Icon> */}
-              </ListItemIcon>
-              <ListItemText className="slide-text" primary={el.text} />
-            </ListItemButton>
+            <Link className="sidebar-item-link" to={el?.link}>
+              <ListItemButton
+                key={index}
+                selected={selectedIndex === index}
+                onClick={(event) => handleListItemClick(event, index)}
+              >
+                <ListItemIcon>
+                  {/* <InboxIcon className="slide-icon" /> */}
+                  {/* <FontAwesomeIcon className="slide-icon" icon={el?.icon}/> */}
+                  {/* <Icon icon={el.name} /> */}
+                  <Icon
+                    fontSize="small"
+                    className={selectedIndex === index ? "googleIconColor" : ""}
+                  >
+                    {el.icon}
+                  </Icon>
+                  {/* <Icon fontSize="small">add_circle</Icon> */}
+                </ListItemIcon>
+                <ListItemText className="slide-text" primary={el.text} />
+              </ListItemButton>
+            </Link>
           ))}
         </List>
       </Box>

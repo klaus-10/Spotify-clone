@@ -1,62 +1,55 @@
-
-
 .dashboard {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    max-width: 100vw;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: 100vh;
+  max-width: 100vw;
 }
 
 .dashboard-content {
-    left: 0 !important;
-    height: 100%;
-    width: 100%;
-    /* background: #F9FAFB; */
+  left: 0 !important;
+  height: 100%;
+  width: 100%;
+  /* background: #F9FAFB; */
 }
 
+.open-dash {
+  /* filter: brightness(30%) !important; */
+  /* cursor: pointer !important; */
+  transition: left 350ms ease !important;
+  /* left: 270px !important; */
+  float: right;
+  width: calc(100% - 270px);
+}
 
+/* //black screen to handle open sidebar */
+.black-touch {
+  position: fixed;
+  left: 0;
+  top: 0;
 
+  z-index: 198;
+  height: 100vh;
+  width: 100vw;
+  max-width: 100%;
+  display: none;
+  background: rgb(0, 0, 0, 0.5);
+  transition: left 350ms ease-out;
+  -webkit-transition: left 350ms ease-out;
+  content: "";
+}
 
-.open-dash{
-    /* filter: brightness(30%) !important; */
-    /* cursor: pointer !important; */
-    transition: left 350ms ease !important;
-    /* left: 270px !important; */
-    float: right;
-    width: calc(100% - 270px);
-  }
+.black-touch h1 {
+  height: 100vh;
+  width: 100%;
+  content: "" !important;
+  background: rgb(0, 0, 0, 0.5);
+  font-size: 0px;
+}
 
-
-
-  /* //black screen to handle open sidebar */
-  .black-touch {
-    position: fixed;
-    left: 0;
-    top: 0;
-  
-    z-index: 198;
-    height: 100vh;
-    width: 100vw;
-    max-width: 100%;
-    display: none;
-    background: rgb(0, 0, 0, 0.5);
-    transition: left 350ms ease-out;
-    -webkit-transition: left 350ms ease-out;
-    content: "";
-  }
-  
-  .black-touch h1 {
-    height: 100vh;
-    width: 100%;
-    content: "" !important;
-    background: rgb(0, 0, 0, 0.5);
-    font-size: 0px;
-  }
-  
-  
 .op {
-    display: block;
-    left: 0;
-    transition: left 350ms ease-out;
-    -webkit-transition: left 350ms ease-out;
-  }
+  display: block;
+  left: 0;
+  transition: left 350ms ease-out;
+  -webkit-transition: left 350ms ease-out;
+}

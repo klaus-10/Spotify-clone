@@ -1,0 +1,25 @@
+.home {
+  background: #121212;
+  min-height: calc(100% - 70px);
+}
+
+/* 24 / 32 */
+
+.home-content-item {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-auto-rows: 1fr;
+  place-items: center;
+  row-gap: 2.5rem;
+  width: 100%;
+  height: 100%;
+  gap: 20px;
+
+  min-height: 320px;
+  max-height: 360px;
+  overflow: hidden;
+}
+
+.home-content-item:nth-child(-n + 3) {
+  /* display: none; */
+}

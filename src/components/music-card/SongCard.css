@@ -1,0 +1,35 @@
+.song-card {
+  height: 320px;
+  /* width: 180px; */
+  width: calc(100% - 32px);
+  max-width: 220px;
+  padding: 16px;
+  background: #181818;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.song-card-img {
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  border: solid 1px red;
+  background: red;
+}
+
+.song-card-desc {
+  height: 40%;
+}
+
+.song-card:hover {
+  background-color: #252525;
+}
+
+.flex-bw {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

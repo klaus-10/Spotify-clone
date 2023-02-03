@@ -29,14 +29,19 @@
   z-index: 200;
   overflow-y: auto;
   overflow: scroll;
-  border-right: solid 1px #e0e4e7;
-  background: #edf3fc !important;
+  border-right: solid 1px black;
+  background: black !important;
   transform: translateX(0);
   -webkit-transition: 250ms ease-in-out;
   -moz-transition: 250ms ease-in-out;
   -o-transition: 250ms ease-in-out;
   transition: 250ms ease-in-out;
   /* padding: 0 10px; */
+}
+
+.sidebar-item-link {
+  /* color: black; */
+  text-decoration: none;
 }
 
 .open {

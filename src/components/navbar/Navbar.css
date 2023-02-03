@@ -1,25 +1,23 @@
-
-
-
 .navbar {
-    width: calc(100% - 60px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #bdbdbd;
-    padding: 15px 30px;
-    position: relative;
+  width: calc(100% - 60px);
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 30px;
+  position: relative;
+  background: #090909 !important;
 }
 
-.extended .search-box{
-    position: absolute;
-    left: 250px !important;
+.extended .search-box {
+  position: absolute;
+  left: 250px !important;
 }
 
 .textHover:hover {
-    background: rgb(0, 0, 0, .1) !important;
+  background: rgba(0, 0, 0, 0.6) !important;
 }
 
 .search-box svg {
-    fill: #bdbdbd;
+  fill: #bdbdbd;
 }
