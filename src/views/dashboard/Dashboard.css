@@ -53,3 +53,8 @@
   transition: left 350ms ease-out;
   -webkit-transition: left 350ms ease-out;
 }
+
+.outlet-container {
+  background: #121212;
+  min-height: calc(100% - 70px);
+}

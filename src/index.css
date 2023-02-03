@@ -31,3 +31,8 @@ div,
 li {
   caret-color: transparent;
 }
+
+a {
+  color: #fff;
+  text-decoration: none;
+}

@@ -80,7 +80,7 @@
 }
 
 .css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root.Mui-selected {
-  background-color: #0075ff !important;
+  /* background-color: #0075ff !important; */
   /* color: #fbfdff !important; */
   border-radius: 10px !important;
 }
@@ -140,4 +140,8 @@
 
 .Mui-selected .css-cveggr-MuiListItemIcon-root {
   color: #fbfdff !important;
+}
+
+.css-cveggr-MuiListItemIcon-root {
+  min-width: 32px !important;
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Box from "@mui/material/Box";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -14,7 +14,7 @@ import InboxIcon from "@mui/icons-material/Inbox";
 import DraftsIcon from "@mui/icons-material/Drafts";
 
 // react router elements
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import elements from "./Sidebar.json";
 
@@ -27,6 +27,16 @@ export default function Sidebar(props) {
   const handleListItemClick = (event, index) => {
     setSelectedIndex(index);
   };
+
+  //location
+  const location = useLocation();
+
+  useEffect(() => {
+    let t = location.pathname.split("/");
+    if (location.pathname === "/") setSelectedIndex(-1);
+    if (location.pathname === "/home") setSelectedIndex(0);
+    if (location.pathname === "/explore") setSelectedIndex(1);
+  }, []);
 
   return (
     <div className={props.open === true ? "sidebar open" : "sidebar close"}>
@@ -66,7 +76,10 @@ export default function Sidebar(props) {
               <ListItemButton
                 key={index}
                 selected={selectedIndex === index}
-                onClick={(event) => handleListItemClick(event, index)}
+                onClick={(event) => {
+                  handleListItemClick(event, index);
+                  props.close();
+                }}
               >
                 <ListItemIcon>
                   {/* <InboxIcon className="slide-icon" /> */}

@@ -8,6 +8,9 @@ import Dashboard from "./views/dashboard/Dashboard";
 import Log from "./views/login/Log";
 import Home from "./views/home/Home";
 import Explore from "./views/search/Explore";
+import MusicList from "./components/music-list/MusicList";
+import MusicPlayer from "./components/music-player/MusicPlayer";
+import Playlist from "./views/playlist/Playlist";
 
 function App() {
   // stato generale app login user
@@ -21,6 +24,8 @@ function App() {
           <Route path="/" exact element={<Dashboard />}>
             <Route path="home" exact element={<Home />} />
             <Route path="explore" exact element={<Explore />} />
+            <Route path="player" exact element={<MusicPlayer />} />
+            <Route path="playlist" exact element={<Playlist />}></Route>
           </Route>
           <Route path="/log" exact element={<Log />} />
         </Routes>

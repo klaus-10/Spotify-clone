@@ -49,7 +49,9 @@ export default function Dashboard() {
         }
       >
         <Navbar side={side} openSide={handleChangeSide} mediaQy={matches} />
-        <Outlet />
+        <div className="outlet-container">
+          <Outlet />
+        </div>
       </div>
       {/* </div> */}
     </div>

@@ -1,11 +1,6 @@
 {
     "sidebar": [
         {
-            "text": "Dashboard",
-            "link": "/dashboardapp",
-            "icon": "dashboard"
-        },
-        {
             "text": "Home",
             "link": "/home",
             "icon": "home"

@@ -3,12 +3,12 @@ import { useNavigate } from "react-router-dom";
 
 import "./SongCard.css";
 
-export default function SongCard(props) {
+export default function Music(props) {
   let navigate = useNavigate();
 
   return (
     <div
-      className={"song-card"}
+      className="song-card"
       onClick={() => {
         navigate("/playlist");
         console.log("ok");
