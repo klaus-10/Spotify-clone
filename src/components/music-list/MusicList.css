@@ -1,5 +1,5 @@
 .music-list,
-.playlist-content-header {
+.playlist-content-table {
   width: calc(100% - 32px);
   height: 56px;
   display: grid;
@@ -19,7 +19,7 @@
   padding: 0 16px;
 }
 
-.playlist-content-header {
+.playlist-content-table {
   border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
   cursor: default !important;
   margin-bottom: 10px;
@@ -129,7 +129,7 @@
   }
 
   .music-list,
-  .playlist-content-header {
+  .playlist-content-table {
     grid-template-columns: 16px 4fr 1fr;
   }
 }
@@ -147,7 +147,7 @@
   }
 
   .music-list,
-  .playlist-content-header {
+  .playlist-content-table {
     grid-template-columns: 16px 4fr 2fr 1fr;
   }
 }

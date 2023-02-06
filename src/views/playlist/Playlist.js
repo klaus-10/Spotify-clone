@@ -107,7 +107,7 @@ export default function Playlist(props) {
     <div className="playlist">
       <div className="playlist-container">
         <section className="playlist-header">
-          <div className="playliost-header-content">
+          <div className="playlist-header-content contentSpacing-nowidth">
             <div className="playlist-img">
               <img src="https://source.unsplash.com/random" alt="" />
             </div>
@@ -122,7 +122,7 @@ export default function Playlist(props) {
         </section>
 
         <section className="playlist-content">
-          <div className="playlist-content-header">
+          <div className="playlist-content-table">
             <div className="music-list-number flex-center">
               <h2>#</h2>
             </div>

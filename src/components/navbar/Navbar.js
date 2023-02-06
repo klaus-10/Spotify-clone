@@ -39,7 +39,7 @@ export default function Navbar(props) {
     if (location.pathname === "/playlist") {
       setNone(true);
     } else setNone(false);
-  });
+  }, [location.pathname]);
 
   return (
     <div

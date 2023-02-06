@@ -1,7 +1,7 @@
 .song-card {
-  height: 320px;
-  /* width: 180px; */
-  width: calc(100% - 32px);
+  height: 280px;
+  width: 180px;
+  /* width: calc(100% - 32px); */
   max-width: 220px;
   padding: 16px;
   background: #181818;
@@ -32,25 +32,60 @@
 }
 
 .song-card-desc h3 {
-  box-sizing: border-box;
+  /* box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
   margin-block: 0px;
   font-size: 1rem;
   font-weight: 800;
   font-family: sans-serif;
   padding-block-end: 8px;
-  color: inherit;
-}
+  color: inherit; */
 
-.song-card-desc a {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
   margin-block: 0px;
   font-size: 1rem;
   font-weight: 700;
+  font-family: var(
+    --font-family,
+    CircularSp,
+    CircularSp-Arab,
+    CircularSp-Hebr,
+    CircularSp-Cyrl,
+    CircularSp-Grek,
+    CircularSp-Deva,
+    var(--fallback-fonts, sans-serif)
+  );
+  padding-block-end: 4px;
+  color: inherit;
+}
+
+.song-card-desc a {
+  /* box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin-block: 0px;
+  font-size: 1rem;
+  font-weight: 700;
   font-family: sans-serif;
-  padding-block-end: 8px;
+  padding-block-end: 8px; */
   color: #b3b3b3 !important;
+
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin-block: 0px;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  font-family: var(
+    --font-family,
+    CircularSp,
+    CircularSp-Arab,
+    CircularSp-Hebr,
+    CircularSp-Cyrl,
+    CircularSp-Grek,
+    CircularSp-Deva,
+    var(--fallback-fonts, sans-serif)
+  );
+  color: var(--text-subdued, #6a6a6a);
 }
 
 .song-card:hover {
@@ -63,9 +98,9 @@
   align-items: center;
 }
 
-@media screen and (max-width: 1200px) {
+/* @media screen and (max-width: 1200px) {
   .song-card {
     height: 270px;
     max-width: 190px;
   }
-}
+} */

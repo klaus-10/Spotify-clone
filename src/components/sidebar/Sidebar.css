@@ -113,15 +113,19 @@
 
 .sidebar-logo-icon svg {
   fill: #637b92 !important;
-  width: 40px !important;
-  height: 40px !important;
+  /* width: 40px !important;
+  height: 40px !important; */
 }
 
 .sidebar-logo-admin {
-  padding: 16px 20px !important;
-  background: rgba(145, 158, 171, 0.12);
+  /* padding: 16px 20px !important; */
+  /* background: rgba(145, 158, 171, 0.12); */
   border-radius: 10px !important;
   gap: 10px;
+  padding: 0 !important;
+}
+
+.sidebar-logo-icon svg {
 }
 
 .slide-admin-text span {
@@ -139,9 +143,43 @@
 }
 
 .Mui-selected .css-cveggr-MuiListItemIcon-root {
-  color: #fbfdff !important;
+  color: #ffff !important;
 }
 
 .css-cveggr-MuiListItemIcon-root {
   min-width: 32px !important;
+}
+
+.slide-text {
+  box-sizing: border-box !important;
+  -webkit-tap-highlight-color: transparent !important;
+  margin-block: 0px !important;
+  font-size: 0.875rem !important;
+  font-weight: 700 !important;
+  font-family: var(
+    --font-family,
+    CircularSp,
+    CircularSp-Arab,
+    CircularSp-Hebr,
+    CircularSp-Cyrl,
+    CircularSp-Grek,
+    CircularSp-Deva,
+    var(--fallback-fonts, sans-serif)
+  ) !important;
+  color: #b3b3b3 !important;
+  padding-left: 10px;
+}
+
+.css-cveggr-MuiListItemIcon-root {
+  color: #b3b3b3 !important;
+}
+
+.css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root.Mui-selected {
+  background-color: transparent !important;
+}
+
+.fwTMCeAaUoWDj9WcQbgy {
+  height: 100px;
+  max-width: 131px;
+  width: 100%;
 }

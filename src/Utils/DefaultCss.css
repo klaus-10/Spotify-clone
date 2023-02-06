@@ -32,3 +32,25 @@
   text-overflow: ellipsis;
   /* white-space: nowrap; */
 }
+
+/* padding */
+.contentSpacing {
+  margin: 0;
+  max-width: 1955px;
+  padding: 0 16px;
+}
+
+.contentSpacing-nowidth {
+  margin: 0;
+  padding: 0 16px;
+}
+
+@media screen and (min-width: 1024px) {
+  .contentSpacing {
+    padding: 0 32px;
+  }
+
+  .contentSpacing-nowidth {
+    padding: 0 32px;
+  }
+}
