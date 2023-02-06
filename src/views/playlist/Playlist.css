@@ -16,21 +16,43 @@
 }
 
 .playlist-header {
-  background: rgb(2, 0, 36);
-  background: radial-gradient(
+  /* background: rgb(2, 0, 36); */
+  /* background: radial-gradient(
     circle,
     rgba(2, 0, 36, 1) 0%,
     rgba(18, 58, 90, 1) 0%,
     rgba(48, 169, 193, 0.9290091036414566) 0%,
     rgba(39, 137, 163, 1) 73%,
     rgba(32, 112, 140, 1) 100%
-  );
+  ); */
+
+  background-color: rgb(83, 83, 83);
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding-top: 80px;
+  /* padding-top: 80px; */
   gap: 24px;
+
+  height: 30vh;
+  max-height: 500px;
+  min-height: 340px;
 }
+
+/* .playlist-content-header {
+  background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(transparent),
+      to(rgba(0, 0, 0, 0.5))
+    ),
+    var(--background-noise);
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+} */
+
+/* .playlist-content-header {
+  background: linear-gradient(transparent 0, rgba(0, 0, 0, 0.5) 100%);
+} */
 
 .playlist-img {
   height: 192px;
@@ -47,4 +69,58 @@
 }
 
 .playlist-content {
+  margin: 0;
+  max-width: 1955px;
+  padding: 0 16px;
+}
+
+/* clock icon */
+.css-i4bv87-MuiSvgIcon-root {
+  width: 16px !important;
+  height: 16px !important;
+  fill: #a7a7a7 !important;
+}
+
+.playlist-content-header h4,
+.playlist-content-header h3,
+.playlist-content-header span {
+  color: #a7a7a7;
+  box-sizing: border-box;
+  margin-block: 0px;
+  font-size: 0.625rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-family: var(
+    --font-family,
+    CircularSp,
+    CircularSp-Arab,
+    CircularSp-Hebr,
+    CircularSp-Cyrl,
+    CircularSp-Grek,
+    CircularSp-Deva,
+    var(--fallback-fonts)
+  );
+
+  color: #b3b3b3;
+}
+
+.playlist-content-header h2 {
+  box-sizing: border-box;
+  margin-block: 0px;
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-family: var(
+    --font-family,
+    CircularSp,
+    CircularSp-Arab,
+    CircularSp-Hebr,
+    CircularSp-Cyrl,
+    CircularSp-Grek,
+    CircularSp-Deva,
+    var(--fallback-fonts)
+  );
+  color: #b3b3b3;
 }

@@ -17,9 +17,9 @@
   /* filter: brightness(30%) !important; */
   /* cursor: pointer !important; */
   transition: left 350ms ease !important;
-  /* left: 270px !important; */
+  /* left: 250px !important; */
   float: right;
-  width: calc(100% - 270px);
+  width: calc(100% - 250px);
 }
 
 /* //black screen to handle open sidebar */

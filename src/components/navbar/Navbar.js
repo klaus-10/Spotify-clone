@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import { Link, Outlet, useNavigate, useLocation } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import Stack from "@mui/material/Stack";
 import Popover from "@mui/material/Popover";
@@ -15,6 +16,7 @@ import { Divider } from "@mui/material";
 
 export default function Navbar(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const location = useLocation();
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -29,10 +31,28 @@ export default function Navbar(props) {
 
   // context
   // const user = useContext(UserContex);
-  const user = true;
+
+  const [user, setUser] = useState(true);
+  const [none, setNone] = useState(false);
+
+  useEffect(() => {
+    if (location.pathname === "/playlist") {
+      setNone(true);
+    } else setNone(false);
+  });
 
   return (
-    <div className={props.matches ? "navbar extended" : "navbar"}>
+    <div
+      className={
+        props.matches
+          ? none
+            ? "navbar extended none"
+            : "navbar extended"
+          : none
+          ? "navbar none"
+          : "navbar"
+      }
+    >
       {props.mediaQy ? (
         <div className="search-box" style={{ cursor: "pointer" }}>
           <SearchIcon />

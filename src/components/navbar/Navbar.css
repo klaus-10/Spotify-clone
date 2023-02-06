@@ -21,3 +21,7 @@
 .search-box svg {
   fill: #bdbdbd;
 }
+
+.none {
+  display: none;
+}
