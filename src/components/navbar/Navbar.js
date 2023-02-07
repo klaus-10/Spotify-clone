@@ -36,7 +36,10 @@ export default function Navbar(props) {
   const [none, setNone] = useState(false);
 
   useEffect(() => {
-    if (location.pathname === "/playlist") {
+    if (
+      location.pathname.includes("playlist") ||
+      location.pathname.includes("/track")
+    ) {
       setNone(true);
     } else setNone(false);
   }, [location.pathname]);
