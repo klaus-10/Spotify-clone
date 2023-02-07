@@ -11,7 +11,6 @@ export default function SongCard(props) {
       className={"song-card"}
       onClick={() => {
         navigate("/playlist");
-        console.log("ok");
       }}
     >
       <div className="song-card-img">
