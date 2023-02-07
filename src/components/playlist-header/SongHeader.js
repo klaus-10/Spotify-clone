@@ -13,7 +13,9 @@ export default function SongHeader(props) {
           <h2>{props.playlist && "playlist"}</h2>
           <h2>{props.music && "brano"}</h2>
           <h1>{props.title}</h1>
-          <p>{props.desc ? props.desc : ""}</p>
+          <span className="standalone-ellipsis-one-line">
+            <p>{props.desc ? props.desc : ""}</p>
+          </span>
           <p>
             Avatar, {props.artist}, {props.listNumber && props.listNumber}{" "}
             Brani,

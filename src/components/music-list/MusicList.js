@@ -24,7 +24,9 @@ export default function MusicList(props) {
           <img url={props?.url} />
         </div>
         <div className="music-list-title-desc">
-          <h3>{props?.title}</h3>
+          <span className="standalone-ellipsis-one-line">
+            <h3>{props?.title}</h3>
+          </span>
           <span className="standalone-ellipsis-one-line">
             <h4>{concact(props?.artist)}</h4>
           </span>

@@ -118,7 +118,9 @@ export default function Playlist(props) {
           year={2022}
           duration={"3:15"}
           title={"Playlist Titolo"}
-          desc={"Descrizione della playlist"}
+          desc={
+            "Descrizione della playlist Descrizione della playlist Descrizione della playlist"
+          }
           img={"https://source.unsplash.com/random"}
         />
 

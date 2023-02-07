@@ -14,7 +14,7 @@ export default function Dashboard() {
   const matches = useMediaQuery("(min-width:600px)");
 
   // sidebar status
-  const [side, setSide] = useState(true);
+  const [side, setSide] = useState(false);
   const [firstTimeSlideMobile, setFirstTimeSlideMobile] = useState(0);
 
   const handleChangeSide = () => {

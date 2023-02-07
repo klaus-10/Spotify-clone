@@ -98,11 +98,11 @@ export default function Home() {
   return (
     <div className="home">
       <div className="home-content">
-        <section className="home-content-wm">
+        <section className="home-content-wm contentSpacing-mobile">
           <ImageSlider />
         </section>
 
-        <section>
+        <section className="contentSpacing-mobile">
           <div className="flex-bw">
             <h2>Focus</h2>
             <h3>Read more</h3>
@@ -121,7 +121,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section>
+        <section className="contentSpacing-mobile">
           <div className="flex-bw">
             <h2>Focus</h2>
             <h3>Read more</h3>
@@ -140,7 +140,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section>
+        <section className="contentSpacing-mobile">
           <div className="flex-bw">
             <h2>Focus</h2>
             <h3>Read more</h3>
@@ -159,7 +159,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section>
+        <section className="contentSpacing-mobile">
           <div>
             <h2>Spotify Playlist</h2>
           </div>
