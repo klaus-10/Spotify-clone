@@ -99,18 +99,18 @@
   -moz-column-gap: 8px;
   column-gap: 8px;
   display: grid;
-  grid-template: "title title" "badges subtitle" / auto 1fr;
+  grid-template: "title title" "subtitle subtitle" / auto 1fr;
   grid-template-rows: auto auto;
   grid-template-columns: auto 1fr;
-  grid-template-areas: "title title" "badges subtitle";
+  grid-template-areas: "title title" "subtitle subtitle";
 }
 
-.music-list-title-desc h3 {
+.music-list-title-desc .one {
   grid-area: title;
   margin-bottom: 5px;
 }
 
-.music-list-title-desc h4 {
+.music-list-title-desc .two {
   grid-area: subtitle;
 }
 

@@ -181,7 +181,8 @@
 
 @media screen and (max-width: 600px) {
   .playlist-header-desc h1 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+    padding-bottom: 10px;
   }
 
   .playlist-img {

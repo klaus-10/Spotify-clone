@@ -14,7 +14,7 @@ export default function SongHeader(props) {
           <h2>{props.music && "brano"}</h2>
           <h1>{props.title}</h1>
           <span className="standalone-ellipsis-one-line">
-            <p>{props.desc ? props.desc : ""}</p>
+            <h3>{props.desc ? props.desc : ""}</h3>
           </span>
           <p>
             Avatar, {props.artist}, {props.listNumber && props.listNumber}{" "}

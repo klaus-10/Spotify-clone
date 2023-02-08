@@ -66,7 +66,7 @@ export default function Sidebar(props) {
                 width="50px"
                 height="50px"
                 viewBox="0 0 1134 340"
-                class="fwTMCeAaUoWDj9WcQbgy"
+                className="fwTMCeAaUoWDj9WcQbgy"
               >
                 <title>Spotify</title>
                 <path
