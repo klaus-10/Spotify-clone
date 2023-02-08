@@ -109,7 +109,7 @@ export default function Sidebar(props) {
                   </Icon>
                   {/* <Icon fontSize="small">add_circle</Icon> */}
                 </ListItemIcon>
-                <a className="slide-text">{el.text}</a>
+                <p className="slide-text">{el.text}</p>
               </ListItemButton>
             </Link>
           ))}

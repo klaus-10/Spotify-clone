@@ -1,82 +1,76 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import WaveSurfer from "wavesurfer.js";
+import axios from "axios";
 
-export default function MusicPlayer() {
-  const [waver, setWaver] = useState(null);
-  const [playing, setPlaying] = useState(false);
+import testMp3 from "../../assets/audio/Arai.mp3";
 
-  const el = useRef();
-  const audioEl = useRef();
+const MusicPlayer = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const containerRef = useRef(null);
+  let wavesurfer = null;
+
+  const ctx = new AudioContext();
 
   useEffect(() => {
-    let wavesurfer;
-    if (el.current) {
-      wavesurfer = WaveSurfer.create({
-        barWidth: 3,
-        barHeight: 1,
-        cursorWidth: 1,
-        container: el.current,
-        backend: "WebAudio",
-        height: 60,
-        progressColor: "#fff",
-        responsive: true,
-        waveColor: "rgba(255,255,255,.38",
-        cursorColor: "#fff",
-      });
+    wavesurfer = WaveSurfer.create({
+      container: containerRef.current,
+      backend: "MediaElement",
+      mediaControls: true,
+      waveColor: "violet",
+      progressColor: "purple",
+      barWidth: 2,
+      barHeight: 1,
+      barGap: null,
+      xhr: {
+        cache: "default",
+        mode: "no-cors",
+        method: "GET",
+        credentials: "same-origin",
+        redirect: "follow",
+        referrer: "client",
+        headers: [{ key: "Authorization" }],
+      },
+    });
 
-      wavesurfer.load(audioEl.current);
+    // fetch(
+    //   "https://ncsmusic.s3.eu-west-1.amazonaws.com/tracks/000/001/319/insides-feat-jessy-kvge-1675818045-O8B8m9trDG.mp3",
+    //   {
+    //     mode: "no-cors",
+    //   }
+    // )
+    //   .then((response) => response.arrayBuffer())
+    //   .then((arrayBuffer) => {
+    //     // ctx.decodeAudioData(arrayBuffer))
+    //     // .then((decodeAudio) => {
+    //     // audio = decodeAudio;
+    //     wavesurfer.load(
+    //       arrayBuffer
+    //       // "https://ncsmusic.s3.eu-west-1.amazonaws.com/tracks/000/001/319/insides-feat-jessy-kvge-1675818045-O8B8m9trDG.mp3"
+    //     );
+    //   })
+    //   .catch((e) => console.error(e));
 
-      setWaver(wavesurfer);
-    }
-
-    return () => wavesurfer.destroy();
+    wavesurfer.load(
+      // mp3
+      "https://ncsmusic.s3.eu-west-1.amazonaws.com/tracks/000/001/319/insides-feat-jessy-kvge-1675818045-O8B8m9trDG.mp3"
+    );
   }, []);
 
-  const handlePlay = () => {
-    setPlaying(!playing);
-    waver?.playPause();
+  const togglePlay = () => {
+    if (isPlaying) {
+      wavesurfer.pause();
+    } else {
+      wavesurfer.play();
+    }
+    setIsPlaying(!isPlaying);
   };
 
   return (
-    <div className="max-w-lg w-full rounded-md bg-blue-600 p-3">
-      <div className="flex items-center">
-        <PlayButton onClick={handlePlay} />
-        <div className="flex-1" ref={el} />
-      </div>
-      <audio
-        ref={audioEl}
-        src={
-          "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_700KB.mp3"
-        }
-      />
+    <div>
+      <div ref={containerRef} />
+      <button onClick={togglePlay}>{isPlaying ? "Pause" : "Play"}</button>
     </div>
   );
-}
+};
 
-function PlayButton({ onClick }) {
-  return (
-    <button
-      onClick={onClick}
-      className="h-10 w-10 rounded-full bg-white/[0.3] hover:bg-white/[0.4] flex items-center justify-center cursor-pointer"
-    >
-      <PlayIcon />
-    </button>
-  );
-}
-
-function PlayIcon() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="22"
-      height="22"
-      viewBox="0 0 35.713 39.635"
-    >
-      <path
-        d="M14.577.874C11-1.176,8.107.5,8.107,4.621V35.01c0,4.122,2.9,5.8,6.47,3.751L41.139,23.529c3.575-2.05,3.575-5.372,0-7.422Z"
-        transform="translate(-8.107 0)"
-        fill="#f7f7f7"
-      />
-    </svg>
-  );
-}
+export default MusicPlayer;
