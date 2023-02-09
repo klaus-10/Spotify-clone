@@ -1,84 +1,57 @@
-// import React, { useRef, useState, useEffect } from "react";
-// import WaveSurfer from "wavesurfer.js";
-// import axios from "axios";
+import React, { useRef, useEffect, useState } from "react";
+import WaveSurfer from "wavesurfer.js";
 
-// import testMp3 from "../../assets/audio/Arai.mp3";
-
-// const MusicPlayer = () => {
-//   const [isPlaying, setIsPlaying] = useState(false);
-//   const containerRef = useRef(null);
-//   let wavesurfer = null;
-
-//   const ctx = new AudioContext();
-
-//   useEffect(() => {
-//     wavesurfer = WaveSurfer.create({
-//       container: containerRef.current,
-//       backend: "MediaElement",
-//       mediaControls: true,
-//       waveColor: "violet",
-//       progressColor: "purple",
-//       barWidth: 2,
-//       barHeight: 1,
-//       barGap: null,
-//       xhr: {
-//         cache: "default",
-//         mode: "no-cors",
-//         method: "GET",
-//         credentials: "same-origin",
-//         redirect: "follow",
-//         referrer: "client",
-//         headers: [{ key: "Authorization" }],
-//       },
-//     });
-
-//     wavesurfer.load(
-//       // mp3
-//       "https://ncsmusic.s3.eu-west-1.amazonaws.com/tracks/000/001/319/insides-feat-jessy-kvge-1675818045-O8B8m9trDG.mp3"
-//     );
-//   }, []);
-
-//   const togglePlay = () => {
-//     if (isPlaying) {
-//       wavesurfer.pause();
-//     } else {
-//       wavesurfer.play();
-//     }
-//     setIsPlaying(!isPlaying);
-//   };
-
-//   return (
-//     <div>
-//       <div ref={containerRef} />
-//       <button onClick={togglePlay}>{isPlaying ? "Pause" : "Play"}</button>
-//     </div>
-//   );
-// };
-
-// export default MusicPlayer;
-
-import React, { useState, useEffect } from "react";
-
-const MusicPlayer = () => {
-  const [audioData, setAudioData] = useState(null);
+const Waveform = () => {
+  const waveRef = useRef(null);
+  const [wavesurfer, setWavesurfer] = useState(null);
+  const [volume, setVolume] = useState(0.5);
 
   useEffect(() => {
-    fetch(
-      "https://ncsmusic.s3.eu-west-1.amazonaws.com/tracks/000/001/319/insides-feat-jessy-kvge-1675818045-O8B8m9trDG.mp3"
-    )
-      .then((response) => response.arrayBuffer())
-      .then((arrayBuffer) => setAudioData(arrayBuffer));
+    const ws = WaveSurfer.create({
+      container: waveRef.current,
+      waveColor: "violet",
+      progressColor: "purple",
+    });
+
+    ws.load(
+      "https://p.scdn.co/mp3-preview/a6f0ec5cde3895ef98c6114c128041372d89c63c?cid=d8a5ed958d274c2e8ee717e6a4b0971d"
+    );
+    ws.setVolume(volume);
+
+    setWavesurfer(ws);
+
+    return () => {
+      ws.destroy();
+    };
   }, []);
+
+  const handlePlay = () => {
+    wavesurfer.play();
+  };
+
+  const handlePause = () => {
+    wavesurfer.pause();
+  };
+
+  const handleVolume = (e) => {
+    setVolume(e.target.value / 100);
+    wavesurfer.setVolume(e.target.value / 100);
+  };
 
   return (
     <div>
-      {audioData ? (
-        <p>Audio data successfully fetched and saved in the variable.</p>
-      ) : (
-        <p>Loading...</p>
-      )}
+      <div ref={waveRef} style={{ width: "200px" }} />
+      <button onClick={handlePlay}>Play</button>
+      <button onClick={handlePause}>Pause</button>
+      <input
+        type="range"
+        min="0"
+        max="100"
+        value={volume * 100}
+        onChange={handleVolume}
+      />
     </div>
   );
 };
 
-export default MusicPlayer;
+export default Waveform;
