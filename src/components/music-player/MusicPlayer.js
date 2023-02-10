@@ -1,36 +1,51 @@
+import PlayCircle from "@mui/icons-material/PlayCircle";
 import React, { useRef, useEffect, useState } from "react";
 import WaveSurfer from "wavesurfer.js";
+import MusicList from "../music-list/MusicList";
 
-const Waveform = () => {
+import "./MusicPlayer.css";
+
+const MusicPlayer = ({ src, handlePlayParent, play }) => {
   const waveRef = useRef(null);
   const [wavesurfer, setWavesurfer] = useState(null);
+  const [isPlaying, setIsPlaying] = useState(true);
   const [volume, setVolume] = useState(0.5);
+
+  console.log(wavesurfer, isPlaying);
 
   useEffect(() => {
     const ws = WaveSurfer.create({
       container: waveRef.current,
-      waveColor: "violet",
-      progressColor: "purple",
+      waveColor: "white",
+      progressColor: "lightgray",
     });
 
-    ws.load(
-      "https://p.scdn.co/mp3-preview/a6f0ec5cde3895ef98c6114c128041372d89c63c?cid=d8a5ed958d274c2e8ee717e6a4b0971d"
-    );
+    ws.load(src);
     ws.setVolume(volume);
+
+    ws.on("ready", () => {
+      setIsPlaying(play);
+      ws.play();
+    });
 
     setWavesurfer(ws);
 
     return () => {
       ws.destroy();
     };
-  }, []);
+  }, [src]);
+
+  // useEffect(() => {
+  //   handlePlay();
+  // }, [play]);
 
   const handlePlay = () => {
-    wavesurfer.play();
-  };
-
-  const handlePause = () => {
-    wavesurfer.pause();
+    setIsPlaying(!isPlaying);
+    if (!isPlaying) {
+      wavesurfer.play();
+    } else {
+      wavesurfer.pause();
+    }
   };
 
   const handleVolume = (e) => {
@@ -39,10 +54,23 @@ const Waveform = () => {
   };
 
   return (
-    <div>
+    <div className="music-player">
+      {/* <div className="music-player-track">
+        <div className="music-player-track-img">
+          <img src="" />
+        </div>
+        <div className="music-player-track-desc"></div>
+      </div> */}
+      <MusicList />
       <div ref={waveRef} style={{ width: "200px" }} />
-      <button onClick={handlePlay}>Play</button>
-      <button onClick={handlePause}>Pause</button>
+      <button
+        onClick={() => {
+          handlePlay();
+          handlePlayParent();
+        }}
+      >
+        {isPlaying ? "pause" : "play"}
+      </button>
       <input
         type="range"
         min="0"
@@ -54,4 +82,4 @@ const Waveform = () => {
   );
 };
 
-export default Waveform;
+export default MusicPlayer;
