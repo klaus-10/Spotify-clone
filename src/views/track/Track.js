@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import ArtistCard from "../../components/artist-card/ArtistCard";
 import PlayMusic from "../../components/play-music-section/PlayMusic";
+import MusicPlayer from "../../components/music-player/MusicPlayer";
 
 import SongHeader from "../../components/playlist-header/SongHeader";
 import TopArtistSongs from "../../components/top-artist-songs/TopArtistSongs";
@@ -9,6 +10,8 @@ import TopArtistSongs from "../../components/top-artist-songs/TopArtistSongs";
 import "./Track.css";
 
 export default function Track(props) {
+  const [play, setPlay] = useState(false);
+
   let navigate = useNavigate();
 
   const lyrics = [
@@ -385,6 +388,10 @@ export default function Track(props) {
     },
   ];
 
+  const handlePlayParent = () => {
+    setPlay(!play);
+  };
+
   return (
     <div className="track">
       <SongHeader
@@ -398,7 +405,7 @@ export default function Track(props) {
         img={"https://source.unsplash.com/random"}
       />
 
-      <PlayMusic />
+      <PlayMusic playFunc={handlePlayParent} play={play} />
 
       <div className="track-lyrics contentSpacing">
         <h2>Lyrics</h2>
@@ -411,9 +418,19 @@ export default function Track(props) {
 
       <TopArtistSongs songs={songs} />
 
-      <div className="music-player"></div>
+      {/* {play && ( */}
+      <MusicPlayer
+        handlePlayParent={handlePlayParent}
+        play={play}
+        src={
+          "https://p.scdn.co/mp3-preview/a6f0ec5cde3895ef98c6114c128041372d89c63c?cid=d8a5ed958d274c2e8ee717e6a4b0971d"
+        }
+      />
+      {/* )} */}
 
-      <h1>Music</h1>
+      {/* <div className="music-player"></div>
+
+      <h1>Music</h1> */}
     </div>
   );
 }

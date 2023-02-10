@@ -11,21 +11,16 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import "./PlayMusic.css";
 
 export default function PlayMusic(props) {
-  const [play, setPlay] = useState(false);
-
   const [favorite, setFavorite] = useState(false);
 
-  const handlePlay = () => {
-    setPlay(!play);
-  };
   const handleFavorite = () => {
     setFavorite(!favorite);
   };
 
   return (
     <section className="play-music contentSpacing flex-left">
-      <div className="play-btn" onClick={handlePlay}>
-        <span>{play ? <PauseCircleIcon /> : <PlayCircleIcon />}</span>
+      <div className="play-btn" onClick={() => props.playFunc()}>
+        <span>{props.play ? <PauseCircleIcon /> : <PlayCircleIcon />}</span>
       </div>
       <span
         onClick={handleFavorite}
