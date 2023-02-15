@@ -107,6 +107,13 @@ export default function Playlist(props) {
       duration: "3:15",
     },
   ];
+
+  //go to top
+  useEffect(() => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }, []);
+
   return (
     <div className="playlist">
       <div className="playlist-container">
@@ -146,7 +153,7 @@ export default function Playlist(props) {
           </div>
           {/* <MusicListHeader /> */}
           {musicList.map((el, index) => (
-            <div onClick={() => navigate("/track")}>
+            <div onClick={() => navigate("/track")} key={index}>
               <MusicList
                 number={index + 1}
                 img={el.img}

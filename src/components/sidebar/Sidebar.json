@@ -1,40 +1,29 @@
 {
-    "sidebar": [
-        {
-            "text": "Home",
-            "link": "/home",
-            "icon": "home"
-        },
-        {
-            "text": "Explore",
-            "link": "/explore",
-            "icon": "search"
-        },
-        {
-            "text": "Saved",
-            "link": "/saved",
-            "icon": "saves"
-        },
-        {
-            "text": "Library",
-            "link": "/library",
-            "icon": "book"
-        },
-        {
-            "text": "Radio",
-            "link": "/radio",
-            "icon": "radio"
-        },
-        {
-            "text": "Concert",
-            "link": "/concert",
-            "icon": "spatial_audio"
-        },
-        {
-            "text": "Login",
-            "link": "/log",
-            "icon": "login"
-        }
-
-    ]
+  "sidebar": [
+    {
+      "text": "Home",
+      "link": "/home",
+      "icon": "home"
+    },
+    {
+      "text": "Search",
+      "link": "/search",
+      "icon": "search"
+    },
+    {
+      "text": "Library",
+      "link": "/library",
+      "icon": "book"
+    },
+    {
+      "text": "Radio",
+      "link": "/radio",
+      "icon": "radio"
+    },
+    {
+      "text": "Concert",
+      "link": "/concert",
+      "icon": "spatial_audio"
+    }
+  ]
 }

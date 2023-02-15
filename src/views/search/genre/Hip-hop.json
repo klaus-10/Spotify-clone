@@ -1,0 +1,88 @@
+
+{
+    "sections": [
+        {
+            "title": "Playlist popolari hip hop",
+            "desc": [
+            {
+                "id": "37i9dQZF1DX14EWeH2Pwf3",
+                "img": "https://i.scdn.co/image/ab67706f00000002c77b45dea785418db154390b",
+                "title": "Plus Ultra",
+                "desc": "La playlist urban più grande d'Italia. Cover: Lazza",
+                "artist:": "Spotify",
+                "like": "380.049 Mi piace",
+                "number": "90 brani",
+                "duration": "4 ore 15 min"
+            },
+            {
+
+                "id": "37i9dQZF1DX6gvUCtw1XOD",
+                "img": "https://i.scdn.co/image/ab67706f0000000285107941005fbdac6f7aeb35",
+                "title": "Napoli Centro",
+                "desc": "Nun te preoccupá guagliò, c sta o mar for... La musica che suona per le strade di Napoli 💙 con Matteo Paolillo",
+                "artist:": "Spotify",
+                "like": "120.865 Mi piace",
+                "number": "84 brani",
+                "duration": "4 ore 30 min"
+            },
+            {
+                "id": "37i9dQZF1DX37pZLd58ED5",
+                "img": "https://i.scdn.co/image/ab67706f00000002787739eca9cd03a01e11f48d",
+                "title": "Mezzanotte Chill Rap",
+                "desc": "Solo beat e rime avvolgenti. Cover: Night Skinny",
+                "artist:": "Spotify",
+                "like": "242.206 Mi piace",
+                "number": "60 brani",
+                "duration": "3 ore 15 min"
+            }
+            ]
+        },
+
+        {
+            "title": "Donne nell'Hip Hop",
+            "desc": [
+            {
+                "id": "37i9dQZF1DX6GwdWRQMQpq",
+                "img": "https://i.scdn.co/image/ab67706f000000026cb3b753cc224d5bf7c3f75e",
+                "title": "Feelin' Myself",
+                "desc": "The hip-hop playlist that's a whole mood. Art By Laci Jordan; Cover: PinkPantheress & Ice Spice",
+                "artist:": "Spotify",
+                "like": "2.742.230 Mi piace",
+                "number": "50 brani",
+                "duration": "circa 2 ore"
+            },
+            {
+
+                "id": "37i9dQZF1DWZwCeILEyQAy",
+                "img": "https://i.scdn.co/image/ab67706f000000023d28ed07a683e84a98c57095",
+                "title": "Preassure",
+                "desc": "Real Rap. All Pressure. Cover: Gloss Up",
+                "artist:": "Spotify",
+                "like": "495.402 Mi piace",
+                "number": "65 brani",
+                "duration": "2 ore 45 min"
+            },
+            {
+                "id": "37i9dQZF1DX9iGsUcr0Bpa",
+                "img": "https://i.scdn.co/image/ab67706f0000000229e47101fa713b9505b7da60",
+                "title": "Door Knockers",
+                "desc": "Classics from trailblazing women in hip-hop. Cover: Gangsta Boo",
+                "artist:": "Spotify",
+                "like": "230.563 Mi piace",
+                "number": "50 brani",
+                "duration": "3 ore 15 min"
+            },
+            {
+                "id": "37i9dQZF1DX9iGsUcr0Bpa",
+                "img": "https://i.scdn.co/image/ab67706f000000028e9f5dff119e779060bb38ec",
+                "title": "This Is Nicki Minaj",
+                "desc": "This is Nicki Minaj. The essential tracks, all in one playlist.",
+                "artist:": "Spotify",
+                "like": "752.397 Mi piace",
+                "number": "52 brani",
+                "duration": "3 ore 15 min"
+            }
+            ]
+        }
+    ]
+}

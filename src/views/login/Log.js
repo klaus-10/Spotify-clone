@@ -1,147 +1,33 @@
-import React, { useState } from "react";
-
-//material components
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
-
-//icon
-import { InputAdornment } from "@mui/material";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import MonitorWeightIcon from "@mui/icons-material/MonitorWeight";
-import EmailIcon from "@mui/icons-material/Email";
-import KeyIcon from "@mui/icons-material/Key";
-
-import "./Log.css";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 export default function Log() {
-  const [login, setLogin] = useState(false);
+  const handleClick = async () => {
+    const client_id = "f7e65796b4084a6e92eeeb4b5c415230";
+    const redirect_uri = "https://localhost:3000/home";
+    const api_uri = "https://accounts.spotify.com/authorize";
+    const scope = [
+      "user-read-private",
+      "user-read-email",
+      // "user-modify-playback-state",
+      // "user-read-playback-state",
+      // "user-read-currently-playing",
+      "user-read-recently-played",
+      "user-top-read",
+    ];
+    window.location.href = `${api_uri}?client_id=${client_id}&redirect_uri=${redirect_uri}&scope=${scope.join(
+      " "
+    )}&response_type=token&show_dialog=true`;
 
-  const handleLoginMockUp = () => {
-    setLogin(!login);
+    // axios.get("https://accounts.spotify.com/authorize?" + stringify)
   };
-
   return (
-    <div className="log-container">
-      <div className="log-container-box">
-        <div className="log-box">
-          {login ? (
-            <div className="register-box">
-              <div className="register-title">
-                <h1>Login</h1>
-              </div>
-
-              <TextField
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <EmailIcon />
-                    </InputAdornment>
-                  ),
-                }}
-                placeholder="e-mail"
-                style={{ marginTop: "20px" }}
-                fullWidth={true}
-                variant="standard"
-              />
-
-              <TextField
-                type="password"
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <KeyIcon />
-                    </InputAdornment>
-                  ),
-                }}
-                placeholder="password"
-                fullWidth={true}
-                style={{ marginTop: "20px" }}
-                variant="standard"
-              />
-
-              <div style={{ width: "100%" }}>
-                <Button
-                  fullWidth={true}
-                  className="register-btn"
-                  style={{ marginTop: "20px" }}
-                  variant="contained"
-                >
-                  LOGIN
-                </Button>
-                <div className="sign-up">
-                  <h5>Not registered yet?</h5>
-                  <p onClick={handleLoginMockUp}>sign up</p>
-                </div>
-              </div>
-            </div>
-          ) : (
-            <div className="register-box">
-              <div className="register-title">
-                <h1>Register</h1>
-              </div>
-
-              <TextField
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <AccountCircleIcon />
-                    </InputAdornment>
-                  ),
-                }}
-                placeholder="username"
-                style={{ marginTop: "20px" }}
-                fullWidth={true}
-                variant="standard"
-              />
-
-              <TextField
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <EmailIcon />
-                    </InputAdornment>
-                  ),
-                }}
-                placeholder="e-mail"
-                style={{ marginTop: "20px" }}
-                fullWidth={true}
-                variant="standard"
-              />
-
-              <TextField
-                type="password"
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <KeyIcon />
-                    </InputAdornment>
-                  ),
-                }}
-                placeholder="password"
-                fullWidth={true}
-                style={{ marginTop: "20px" }}
-                variant="standard"
-              />
-
-              <div style={{ width: "100%" }}>
-                <Button
-                  fullWidth={true}
-                  className="register-btn"
-                  style={{ marginTop: "20px" }}
-                  variant="contained"
-                >
-                  REGISTER
-                </Button>
-                <div className="sign-up">
-                  <h5>Have you an account?</h5>
-                  <p onClick={handleLoginMockUp}>login</p>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
+    <div>
+      <img
+        src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_Black.png"
+        alt="spotify"
+      />
+      <button onClick={handleClick}>Connect Spotify</button>
     </div>
   );
 }

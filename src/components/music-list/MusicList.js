@@ -5,7 +5,6 @@ import "./MusicList.css";
 export default function MusicList(props) {
   const concact = (arr) => {
     let tmp = [...arr];
-    console.log(arr + "lengh: " + tmp.length);
 
     let c = "";
     tmp.length != 0 &&

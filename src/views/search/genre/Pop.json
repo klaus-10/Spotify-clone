@@ -1,0 +1,78 @@
+
+{
+    "sections": [
+        {
+            "title": "Nuovo Pop Z",
+            "desc": [
+            {
+                "id": "37i9dQZF1DWYCIYGXn56uz",
+                "img": "https://i.scdn.co/image/ab67706f00000002cd073e0019a0af44828c874e",
+                "title": "Generazione Z",
+                "desc": "Tananai",
+                "artist:": "Spotify",
+                "like": "380.049 Mi piace",
+                "number": "90 brani",
+                "duration": "4 ore 15 min"
+            },
+            {
+
+                    "id": "37i9dQZF1DX5gGGog0N2Tu",
+                    "img": "https://i.scdn.co/image/ab67706f0000000226b2e05d9dae0c9d9633e232",
+                    "title": "Sanremo pov: no meme, no party",
+                    "desc": "Sanremo senza meme è come un vestito senza conchiglie: non ha senso",
+                    "artist:": "Spotify",
+                    "like": "41.810 Mi piace",
+                    "number": "50 brani",
+                    "duration": "2 ore 45 min"
+            },
+            {
+                    "id": "37i9dQZF1DX0ckkFHFOpuK",
+                    "img": "https://i.scdn.co/image/ab67706f0000000206bbeb3729aa3f5df76ba987",
+                    "title": "In tendenza",
+                    "desc": "Viral & Trending: le canzoni del momento in Italia!",
+                    "artist:": "Spotify",
+                    "like": "113.653 Mi piace",
+                    "number": "156 brani",
+                    "duration": "circa 8 ore"
+            }
+            ]
+        },
+
+        {
+            "title": "Pop Latino",
+            "desc": [
+            {
+                "id": "37i9dQZF1DWSpF87bP6JSF",
+                "img": "https://i.scdn.co/image/ab67706f00000002a3315cce89befaec3be6f984",
+                "title": "La Lista Pop",
+                "desc": "Los éxitos del pop latino featuring KAROL G y Romeo Santos.",
+                "artist:": "Spotify",
+                "like": "2.702.878 Mi piace",
+                "number": "50 brani",
+                "duration": "2 ore 45 min"
+            },
+            {
+
+                    "id": "37i9dQZF1DX1QnNyJOBQBv",
+                    "img": "https://i.scdn.co/image/ab67706f00000002fb6d24b6dbae3ee0987b5b99",
+                    "title": "Latin Pop Today",
+                    "desc": "The hottest Latin pop hits right now. Cover: Rels B",
+                    "artist:": "Spotify",
+                    "like": "1.851.177 Mi piace",
+                    "number": "50 brani",
+                    "duration": "2 ore 30 min"
+            },
+            {
+                    "id": "37i9dQZF1DX8womvTyUjrN",
+                    "img": "https://i.scdn.co/image/ab67706f000000025b4ed053607f2f8a4df7c232",
+                    "title": "El Nuevo Pop",
+                    "desc": "Fresh Latin pop on the rise. Cover: Mau y Ricky",
+                    "artist:": "Spotify",
+                    "like": "271.402 Mi piace",
+                    "number": "50 brani",
+                    "duration": "2 ore 30 min"
+            }
+            ]
+        }
+    ]
+}

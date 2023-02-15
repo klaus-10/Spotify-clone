@@ -8,19 +8,23 @@ export default function SongCard(props) {
 
   return (
     <div
+      key={props.keyId}
       className={"song-card"}
       onClick={() => {
-        navigate("/playlist");
+        navigate("/playlist/" + props.id);
       }}
     >
-      <div className="song-card-img">
-        <img url={props.url}></img>
+      <div className={props.img ? "song-card-img" : "song-card-img bg"}>
+        <img src={props.img}></img>
       </div>
       <div className="song-card-desc">
         <h3>{props.title}</h3>
-        <a>
-          {props.artist} {props.time}
-        </a>
+
+        <span className="standalone-ellipsis-three-line">
+          <a>
+            {props.artist} {props.time}
+          </a>
+        </span>
       </div>
     </div>
   );

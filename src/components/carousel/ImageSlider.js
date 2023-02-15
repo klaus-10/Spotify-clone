@@ -91,39 +91,11 @@ import { Paper, Button } from "@mui/material";
 import "./ImageSlider.css";
 
 export default function ImageSlider(props) {
-  const items = [
-    {
-      name: "Random Name #1",
-      description: "Probably the most random thing you have ever seen!",
-      img: "https://source.unsplash.com/YrtFlrLo2DQ",
-    },
-    {
-      name: "Random Name #3",
-      description: "Hello World!",
-      img: "https://source.unsplash.com/OKLqGsCT8qs",
-    },
-    {
-      name: "Random Name #4",
-      description: "Hello World!",
-      img: "https://source.unsplash.com/aWXVxy8BSzc",
-    },
-    {
-      name: "Random Name #5",
-      description: "Hello World!",
-      img: "https://source.unsplash.com/usfIE5Yc7PY",
-    },
-    {
-      name: "Random Name #6",
-      description: "Hello World!",
-      img: "https://source.unsplash.com/F2h_WbKnX4o",
-    },
-  ];
-
   return (
     <Carousel>
-      {items.map((item, i) => (
+      {props.items.map((item, i) => (
         // <Item key={i} item={item} />
-        <div>
+        <div key={i + "f"}>
           <img src={item.img} />
         </div>
       ))}

@@ -1,0 +1,121 @@
+{
+  "sections": [
+    {
+      "title": "Playlist popolari di musica latina",
+      "desc": [
+        {
+          "id": "37i9dQZF1DX10zKzsJ2jva",
+          "img": "https://i.scdn.co/image/ab67706f000000025ff37f0c35cf3ef2467903b9",
+          "title": "Viva Latino",
+          "desc": "Today's top Latin hits, elevando nuestra música. Cover: Peso Pluma & Natanael Cano",
+          "artist:": "Spotify",
+          "like": "13.252.801 Mi piace",
+          "number": "50 brani",
+          "duration": "2 ore 45 min"
+        },
+        {
+          "id": "37i9dQZF1DWY7IeIP1cdjF",
+          "img": "https://i.scdn.co/image/ab67706f00000002e2c09acb3801b49c310b246e",
+          "title": "Baila Reggaeton",
+          "desc": "Reggaeton hits from KAROL G, Feid, Bad Bunny and more.🔥🥵",
+          "artist:": "Spotify",
+          "like": "10.814.179 Mi piace",
+          "number": "50 brani",
+          "duration": "2 ore 45 min"
+        },
+        {
+          "id": "37i9dQZF1DWZjqjZMudx9T",
+          "img": "https://i.scdn.co/image/ab67706f00000002b7eeefce981e18d6f7bf90e7",
+          "title": "In tendenza",
+          "desc": "Viral & Trending: le canzoni del momento in Italia!",
+          "artist:": "Spotify",
+          "like": "113.653 Mi piace",
+          "number": "156 brani",
+          "duration": "circa 8 ore"
+        },
+        {
+          "id": "0JQ5DAqbMKFxXaXKP7zcDp",
+          "img": "https://i.scdn.co/image/ab67706f000000021cf94d672b1d05b385f2fffe",
+          "title": "Workout Latino",
+          "desc": "Ritmo latino!",
+          "artist:": "Spotify",
+          "like": "113.653 Mi piace",
+          "number": "156 brani",
+          "duration": "circa 8 ore"
+        }
+      ]
+    },
+
+    {
+      "title": "100% Reggeton",
+      "desc": [
+        {
+          "id": "37i9dQZF1DWZjqjZMudx9T",
+          "img": "https://i.scdn.co/image/ab67706f00000002b7eeefce981e18d6f7bf90e7",
+          "title": "In tendenza",
+          "desc": "Viral & Trending: le canzoni del momento in Italia!",
+          "artist:": "Spotify",
+          "like": "113.653 Mi piace",
+          "number": "156 brani",
+          "duration": "circa 8 ore"
+        },
+        {
+          "id": "37i9dQZF1DWY7IeIP1cdjF",
+          "img": "https://i.scdn.co/image/ab67706f00000002e2c09acb3801b49c310b246e",
+          "title": "Baila Reggaeton",
+          "desc": "Reggaeton hits from KAROL G, Feid, Bad Bunny and more.🔥🥵",
+          "artist:": "Spotify",
+          "like": "10.814.179 Mi piace",
+          "number": "50 brani",
+          "duration": "2 ore 45 min"
+        },
+        {
+          "id": "37i9dQZF1DX8SfyqmSFDwe",
+          "img": "https://i.scdn.co/image/ab67706f0000000248821712696a21fa6782ceb1",
+          "title": "Old School Reggaeton",
+          "desc": "Classics are forever! Los clásicos no pasan de moda!",
+          "artist:": "Spotify",
+          "like": "113.653 Mi piace",
+          "number": "156 brani",
+          "duration": "circa 8 ore"
+        }
+      ]
+    },
+
+    {
+      "title": "Pop Latino",
+      "desc": [
+        {
+          "id": "37i9dQZF1DWSpF87bP6JSF",
+          "img": "https://i.scdn.co/image/ab67706f00000002a3315cce89befaec3be6f984",
+          "title": "La Lista Pop",
+          "desc": "Los éxitos del pop latino featuring KAROL G y Romeo Santos.",
+          "artist:": "Spotify",
+          "like": "2.702.878 Mi piace",
+          "number": "50 brani",
+          "duration": "2 ore 45 min"
+        },
+        {
+          "id": "37i9dQZF1DX1QnNyJOBQBv",
+          "img": "https://i.scdn.co/image/ab67706f00000002fb6d24b6dbae3ee0987b5b99",
+          "title": "Latin Pop Today",
+          "desc": "The hottest Latin pop hits right now. Cover: Rels B",
+          "artist:": "Spotify",
+          "like": "1.851.177 Mi piace",
+          "number": "50 brani",
+          "duration": "2 ore 30 min"
+        },
+        {
+          "id": "37i9dQZF1DX8womvTyUjrN",
+          "img": "https://i.scdn.co/image/ab67706f000000025b4ed053607f2f8a4df7c232",
+          "title": "El Nuevo Pop",
+          "desc": "Fresh Latin pop on the rise. Cover: Mau y Ricky",
+          "artist:": "Spotify",
+          "like": "271.402 Mi piace",
+          "number": "50 brani",
+          "duration": "2 ore 30 min"
+        }
+      ]
+    }
+  ]
+}

@@ -12,6 +12,7 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import MenuIcon from "@mui/icons-material/Menu";
 import "./Navbar.css";
 import { Divider } from "@mui/material";
+import { LogIn } from "../../utils/Log";
 // import { UserContex } from "../../../UserContext";
 
 export default function Navbar(props) {
@@ -43,6 +44,47 @@ export default function Navbar(props) {
       setNone(true);
     } else setNone(false);
   }, [location.pathname]);
+
+  useEffect(() => {
+    if (localStorage.getItem("access_token")) {
+      setUser(true);
+    } else {
+      setUser(false);
+    }
+  }, [localStorage.getItem("access_token")]);
+
+  const handleLoginClick = async () => {
+    const client_id = "f7e65796b4084a6e92eeeb4b5c415230";
+    const redirect_uri = "https://localhost:3000/home";
+    const api_uri = "https://accounts.spotify.com/authorize";
+    const scope = [
+      "user-read-private",
+      "user-read-email",
+      // "user-modify-playback-state",
+      // "user-read-playback-state",
+      // "user-read-currently-playing",
+      "user-read-recently-played",
+      "user-top-read",
+    ];
+    window.location.href = `${api_uri}?client_id=${client_id}&redirect_uri=${redirect_uri}&scope=${scope.join(
+      " "
+    )}&response_type=token&show_dialog=true`;
+
+    // axios.get("https://accounts.spotify.com/authorize?" + stringify)
+  };
+
+  const handleLogIn = () => {
+    // LogIn();
+    handleLoginClick();
+  };
+
+  const handleLogOut = () => {
+    localStorage.removeItem("playlist");
+    localStorage.removeItem("access_token");
+    handleClose();
+    window.location = window.location.href.replace(/#.*$/, "");
+    window.location.reload();
+  };
 
   return (
     <div
@@ -114,8 +156,8 @@ export default function Navbar(props) {
           >
             admin@gmail.com
           </Typography>
-          <Divider />
-          <div style={{ padding: "10px 5px" }}>
+          {/* <Divider /> */}
+          {/* <div style={{ padding: "10px 5px" }}>
             <div style={{ padding: "0px 0px" }}>
               <Typography
                 style={{
@@ -166,8 +208,8 @@ export default function Navbar(props) {
             </div>
           </div>
 
-          <Divider />
-          <div style={{ padding: "10px 5px" }}>
+          <Divider /> */}
+          <div style={{ padding: "0px 0px 10px" }}>
             <Typography
               style={{
                 fontSize: "13px",
@@ -177,8 +219,10 @@ export default function Navbar(props) {
                 paddingTop: "6px",
                 paddingBottom: "6px",
                 borderRadius: "5px",
+                // transform: `translate(${-5}px, ${0}px)`,
               }}
-              className="textHover"
+              className="textHover logout"
+              onClick={handleLogOut}
             >
               Logout
             </Typography>
@@ -222,6 +266,7 @@ export default function Navbar(props) {
                 borderRadius: "5px",
               }}
               className="textHover"
+              onClick={handleLogIn}
             >
               Login
             </Typography>

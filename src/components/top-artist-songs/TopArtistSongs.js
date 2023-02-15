@@ -10,7 +10,7 @@ export default function TopArtistSongs(props) {
         <h3>props.songs[0].artist</h3>
       </div>
       {props.songs.map((el, index) => (
-        <div className="top-artist-songs-row">
+        <div key={index + "b"} className="top-artist-songs-row">
           <div className="music-list-number flex-center">
             <h4>{index + 1}</h4>
           </div>

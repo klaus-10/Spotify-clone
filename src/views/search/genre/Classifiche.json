@@ -1,0 +1,115 @@
+
+{
+    "sections": [
+        {
+            "title": "Classifiche in primo piano",
+            "desc": [
+            {
+                "id": "37i9dQZEVXbNG2KDcFcKOF",
+                "img": "https://charts-images.scdn.co/assets_generated/locale_it/regional/weekly/region_global_default.jpg",
+                "title": "Brani Top Globale",
+                "desc": "Globale: il tuo aggiornamento settimanale sui brani più ascoltati in questo momento.",
+                "artist:": "Spotify",
+                "like": "1.017.171 Mi piace",
+                "number": "50 brani",
+                "duration": "2 ore 45 min"
+            },
+            {
+
+                "id": "37i9dQZEVXbLp5XoPON0wI",
+                "img": "https://charts-images.scdn.co/assets_generated/locale_it/regional/weekly/region_us_default.jpg",
+                "title": "Brani top Stati Uniti",
+                "desc": "Stati Uniti: il tuo aggiornamento settimanale sui brani più ascoltati in questo momento.",
+                "artist:": "Spotify",
+                "like": "187.259 Mi piace",
+                "number": "50 brani",
+                "duration": "2 ore 45 min"
+            },
+            {
+                "id": "37i9dQZEVXbMDoHDwVN2tF",
+                "img": "https://charts-images.scdn.co/assets/locale_en/regional/daily/region_global_default.jpg",
+                "title": "Top 50 Globale",
+                "desc": "Globale: il tuo aggiornamento quotidiano sui brani più ascoltati in questo momento.",
+                "artist:": "Spotify",
+                "like": "17.167.466  Mi piace",
+                "number": "50 brani",
+                "duration": "2 ore 30 min"
+            },
+            {
+                "id": "37i9dQZEVXbLiRSasKsNU9",
+                "img": "https://charts-images.scdn.co/assets/locale_en/viral/daily/region_global_default.jpg",
+                "title": "Viral 50 Globale",
+                "desc": "Globale: il tuo aggiornamento quotidiano sui brani più ascoltati in questo momento.",
+                "artist:": "Spotify",
+                "like": "1.774.428  Mi piace",
+                "number": "50 brani",
+                "duration": "2 ore 45 min"
+            }
+            ]
+        },
+
+        {
+            "title": "Classifiche settimanali dei brani",
+            "desc": [
+            {
+                "id": "37i9dQZEVXbNG2KDcFcKOF",
+                "img": "https://charts-images.scdn.co/assets_generated/locale_it/regional/weekly/region_global_default.jpg",
+                "title": "Brani Top Globale",
+                "desc": "Globale: il tuo aggiornamento settimanale sui brani più ascoltati in questo momento.",
+                "artist:": "Spotify",
+                "like": "1.017.171 Mi piace",
+                "number": "50 brani",
+                "duration": "2 ore 45 min"
+            },
+            {
+
+                "id": "37i9dQZEVXbJUPkgaWZcWG",
+                "img": "https://charts-images.scdn.co/assets_generated/locale_it/regional/weekly/region_it_default.jpg",
+                "title": "Brani top Italia",
+                "desc": "Italia: il tuo aggiornamento settimanale sui brani più ascoltati in questo momento.",
+                "artist:": "Spotify",
+                "like": "52.604 Mi piace",
+                "number": "50 brani",
+                "duration": "2 ore 45 min"
+            },
+            {
+                "id": "37i9dQZEVXbMwmF30ppw50",
+                "img": "https://charts-images.scdn.co/assets_generated/locale_it/regional/weekly/region_gb_default.jpg",
+                "title": "Top 50 Regno Unito",
+                "desc": "Regno Unito: il tuo aggiornamento settimanale sui brani più ascoltati in questo momento.",
+                "artist:": "Spotify",
+                "like": "96.260 Mi piace",
+                "number": "50 brani",
+                "duration": "2 ore 30 min"
+            }
+            ]
+        },
+
+        {
+            "title": "Classifiche giornaliere dei brani",
+            "desc": [
+                {
+                    "id": "37i9dQZEVXbMDoHDwVN2tF",
+                    "img": "https://charts-images.scdn.co/assets/locale_en/regional/daily/region_global_default.jpg",
+                    "title": "Top 50 Globale",
+                    "desc": "Globale: il tuo aggiornamento quotidiano sui brani più ascoltati in questo momento.",
+                    "artist:": "Spotify",
+                    "like": "17.167.466  Mi piace",
+                    "number": "50 brani",
+                    "duration": "2 ore 30 min"
+                },
+                {
+
+                    "id": "37i9dQZEVXbIQnj7RRhdSX",
+                    "img": "https://charts-images.scdn.co/assets_generated/locale_it/regional/weekly/region_it_default.jpg",
+                    "title": "Top 50 Italia",
+                    "desc": "Italia: il tuo aggiornamento settimanale sui brani più ascoltati in questo momento.",
+                    "artist:": "Spotify",
+                    "like": "1.037.371 Mi piace",
+                    "number": "50 brani",
+                    "duration": "2 ore 45 min"
+                }
+            ]
+        }
+    ]
+}

@@ -26,6 +26,16 @@
   word-break: break-all;
 }
 
+.standalone-ellipsis-three-line {
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  display: -webkit-box;
+  white-space: unset;
+  word-break: break-all;
+  overflow: hidden;
+}
+
 .ellipsis-one-line,
 .standalone-ellipsis-one-line {
   overflow: hidden;

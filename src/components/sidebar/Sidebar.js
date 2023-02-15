@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -7,6 +7,8 @@ import ListItemText from "@mui/material/ListItemText";
 import Divider from "@mui/material/Divider";
 import Avatar from "@mui/material/Avatar";
 import GraphicEqIcon from "@mui/icons-material/GraphicEq";
+import { useNavigate } from "react-router-dom";
+
 // import Icon from "../../../components/Icon";
 import { Icon } from "@mui/material/";
 
@@ -24,12 +26,13 @@ import { ListItem } from "@mui/material";
 
 export default function Sidebar(props) {
   const [selectedIndex, setSelectedIndex] = React.useState(1);
+  let navigate = useNavigate();
 
   const handleListItemClick = (event, index) => {
     setSelectedIndex(index);
   };
 
-  //location
+  // location
   const location = useLocation();
 
   useEffect(() => {
@@ -57,7 +60,10 @@ export default function Sidebar(props) {
         </ListItem> */}
 
         {/* sidebar logo avatar */}
-        <div style={{ padding: "10px 20px" }}>
+        <div
+          style={{ padding: "10px 20px", cursor: "pointer" }}
+          onClick={() => navigate("/home")}
+        >
           <ListItem className="sidebar-logo-admin">
             {/* <Avatar sx={{ bgcolor: "#637b92" }}></Avatar> */}
             <ListItemIcon className="sidebar-logo-icon">
@@ -88,7 +94,7 @@ export default function Sidebar(props) {
             // <div>
             //   <h5>{el}</h5>
             // </div>
-            <Link className="sidebar-item-link" to={el?.link}>
+            <Link key={index + "a"} className="sidebar-item-link" to={el?.link}>
               <ListItemButton
                 key={index}
                 selected={selectedIndex === index}
@@ -113,6 +119,51 @@ export default function Sidebar(props) {
               </ListItemButton>
             </Link>
           ))}
+
+          <Divider style={{ borderColor: "#b3b3b3" }} />
+
+          <div className="playlist-container">
+            {JSON.parse(localStorage.getItem("playlist"))?.map((el, index) => (
+              // <div>
+              //   <h5>{el}</h5>
+
+              // </div>
+              <Link
+                key={parseInt(index + elements.sidebar.length + "") + "f"}
+                className="sidebar-item-link"
+                to={"/playlist/" + el.id}
+              >
+                <ListItemButton
+                  key={index}
+                  selected={
+                    selectedIndex ===
+                    parseInt(index + elements.sidebar.length + "")
+                  }
+                  onClick={(event) => {
+                    handleListItemClick(
+                      event,
+                      parseInt(index + elements.sidebar.length + "")
+                    );
+                    props.close();
+                  }}
+                >
+                  {/* <ListItemIcon> */}
+                  {/* <InboxIcon className="slide-icon" /> */}
+                  {/* <FontAwesomeIcon className="slide-icon" icon={el?.icon}/> */}
+                  {/* <Icon icon={el.name} /> */}
+                  {/* <Icon
+                    fontSize="medium"
+                    className={selectedIndex === parseInt(index + elements.sidebar.length + "") ? "googleIconColor" : ""}
+                  >
+                    {el.icon}
+                  </Icon> */}
+                  {/* <Icon fontSize="small">add_circle</Icon> */}
+                  {/* </ListItemIcon> */}
+                  <p className="slide-text playlist-text">{el.name}</p>
+                </ListItemButton>
+              </Link>
+            ))}
+          </div>
         </List>
       </Box>
     </div>

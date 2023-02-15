@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import ArtistCard from "../../components/artist-card/ArtistCard";
 import PlayMusic from "../../components/play-music-section/PlayMusic";
@@ -10,6 +10,7 @@ import TopArtistSongs from "../../components/top-artist-songs/TopArtistSongs";
 import "./Track.css";
 
 export default function Track(props) {
+  const childRef = useRef();
   const [play, setPlay] = useState(false);
 
   let navigate = useNavigate();
@@ -390,6 +391,7 @@ export default function Track(props) {
 
   const handlePlayParent = () => {
     setPlay(!play);
+    childRef.current.play();
   };
 
   return (
@@ -411,7 +413,7 @@ export default function Track(props) {
         <h2>Lyrics</h2>
 
         {lyrics.map((el, index) => (
-          <p>{el.words}</p>
+          <p key={index}>{el.words}</p>
         ))}
       </div>
       <ArtistCard artist={"Nome artista"} />
@@ -422,6 +424,7 @@ export default function Track(props) {
       <MusicPlayer
         handlePlayParent={handlePlayParent}
         play={play}
+        ref={childRef}
         src={
           "https://p.scdn.co/mp3-preview/a6f0ec5cde3895ef98c6114c128041372d89c63c?cid=d8a5ed958d274c2e8ee717e6a4b0971d"
         }
