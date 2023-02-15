@@ -1,0 +1,118 @@
+
+
+
+{
+    "imageSlider" : [
+        {
+            "name": "Random Name #1",
+            "description": "Probably the most random thing you have ever seen!",
+            "img": "https://source.unsplash.com/YrtFlrLo2DQ"
+          },
+          {
+            "name": "Random Name #3",
+            "description": "Hello World!",
+            "img": "https://source.unsplash.com/OKLqGsCT8qs"
+          },
+          {
+            "name": "Random Name #4",
+            "description": "Hello World!",
+            "img": "https://source.unsplash.com/aWXVxy8BSzc"
+          },
+          {
+            "name": "Random Name #5",
+            "description": "Hello World!",
+            "img": "https://source.unsplash.com/usfIE5Yc7PY"
+          },
+          {
+            "name": "Random Name #6",
+            "description": "Hello World!",
+            "img": "https://source.unsplash.com/F2h_WbKnX4o"
+          }
+    ],
+
+    "sections": [
+        {
+            "title": "Focus",
+            "desc": [
+            {
+                "id": "37i9dQZF1DX4sWSpwq3LiO",
+                "img": "https://i.scdn.co/image/ab67706f00000002ca5a7517156021292e5663a6",
+                "title": "Peaceful Piano",
+                "desc": "Relax and indulge with beautiful piano pieces",
+                "artist:": "Spotify",
+                "like": "6.879.282 Mi piace",
+                "number": "307 brani",
+                "duration": "circa 11 ore"
+            },
+            {
+
+                "id": "37i9dQZF1DWZeKCadgRdKQ",
+                "img": "https://i.scdn.co/image/ab67706f000000025551996f500ba876bda73fa5",
+                "title": "Deep Focus",
+                "desc": "Keep calm and focus with ambient and post-rock music.",
+                "artist:": "Spotify",
+                "like": "3.816.405 Mi piace",
+                "number": "220 brani",
+                "duration": "circa 11 ore"
+            },
+            {
+                "id": "37i9dQZF1DX9sIqqvKsjG8",
+                "img": "https://i.scdn.co/image/ab67706f000000025d87659dcadef82dd0e73f56",
+                "title": "Instrumental Study",
+                "desc": "ocus with soft study music in the background.",
+                "artist:": "Spotify",
+                "like": "1.714.582 Mi piace",
+                "number": "317 brani",
+                "duration": "circa 12 ore"
+            }
+            ]
+        },
+
+        {
+            "title": "Spotify Playlists",
+            "desc": [
+            {
+                "id": "37i9dQZF1DXcBWIGoYBM5M",
+                "img": "https://i.scdn.co/image/ab67706f00000002a03167767495b25d14b9f2ea",
+                "title": "Today's Top Hits",
+                "desc": "Miley Cyrus is on top of the Hottest 50!",
+                "artist:": "Spotify",
+                "like": "32.995.566 Mi piace",
+                "number": "50 brani",
+                "duration": "2 ore 30 min"
+            },
+            {
+
+                "id": "37i9dQZF1DX0XUsuxWHRQd",
+                "img": "https://i.scdn.co/image/ab67706f00000002c1b1d7a8544a829b6856b3a6",
+                "title": "Rap Caviar",
+                "desc": "New music from Central Cee, Lil Uzi Vert and NAV.",
+                "artist:": "Spotify",
+                "like": "15.027.997 Mi piace",
+                "number": "50 brani",
+                "duration": "2 ore 30 min"
+            },
+            {
+                "id": "37i9dQZF1DX5Ejj0EkURtP",
+                "img": "https://i.scdn.co/image/ab67706f00000002b0fe40a6e1692822f5a9d8f1",
+                "title": "All out 2010",
+                "desc": "The biggest songs of the 2010s.",
+                "artist:": "Spotify",
+                "like": "7.463.868 Mi piace",
+                "number": "150 brani",
+                "duration": "circa 9 ore"
+            },
+            {
+                "id": "37i9dQZF1DX10zKzsJ2jva",
+                "img": "https://i.scdn.co/image/ab67706f000000025ff37f0c35cf3ef2467903b9",
+                "title": "Viva Latino",
+                "desc": "Today's top Latin hits, elevando nuestra música. Cover: Peso Pluma & Natanael Cano",
+                "artist:": "Spotify",
+                "like": "13.252.801 Mi piace",
+                "number": "50 brani",
+                "duration": "2 ore 45 min"
+            }
+            ]
+        }
+    ]
+}

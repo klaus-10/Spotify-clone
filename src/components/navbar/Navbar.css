@@ -1,25 +1,52 @@
-
-
-
 .navbar {
-    width: calc(100% - 60px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #bdbdbd;
-    padding: 15px 30px;
-    position: relative;
+  width: calc(100% - 60px);
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 30px;
+  position: relative;
+  background: #090909 !important;
 }
 
-.extended .search-box{
-    position: absolute;
-    left: 250px !important;
+.extended .search-box {
+  position: absolute;
+  left: 250px !important;
 }
 
 .textHover:hover {
-    background: rgb(0, 0, 0, .1) !important;
+  /* background: rgba(0, 0, 0, 0.6) !important; */
+  color: #b3b3b3 !important;
 }
 
 .search-box svg {
-    fill: #bdbdbd;
+  fill: #bdbdbd;
+}
+
+.none {
+  display: none;
+}
+
+.logout {
+  transform: translateX("-10px") !important;
+}
+
+/* MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiPopover-paper  */
+.css-3bmhjh-MuiPaper-root-MuiPopover-paper {
+  background: #282828 !important;
+  color: #fff !important;
+  box-sizing: border-box !important;
+  margin-block: 0px !important;
+  font-size: 0.8125rem !important;
+  font-weight: 400 !important;
+  font-family: var(
+    --font-family,
+    CircularSp,
+    CircularSp-Arab,
+    CircularSp-Hebr,
+    CircularSp-Cyrl,
+    CircularSp-Grek,
+    CircularSp-Deva,
+    var(--fallback-fonts)
+  ) !important;
 }

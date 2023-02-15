@@ -1,0 +1,199 @@
+.playlist {
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.playlist h2 {
+  font-size: 1rem;
+}
+
+.playlist h1 {
+  font-size: 3.5rem;
+}
+
+.playlist-container {
+  /* max-width: 1950px; */
+}
+
+.playlist-header {
+  /* background: rgb(2, 0, 36); */
+  /* background: radial-gradient(
+    circle,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(18, 58, 90, 1) 0%,
+    rgba(48, 169, 193, 0.9290091036414566) 0%,
+    rgba(39, 137, 163, 1) 73%,
+    rgba(32, 112, 140, 1) 100%
+  ); */
+
+  background-color: rgb(83, 83, 83);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* padding-top: 80px; */
+  gap: 24px;
+
+  height: 30vh;
+  max-height: 500px;
+  min-height: 340px;
+}
+
+.playlist-header-content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  height: calc(100% - 24px);
+
+  width: 100%;
+  padding-bottom: 24px;
+  position: relative;
+
+  background: linear-gradient(180deg, transparent 25%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+.playlist-img {
+  -ms-flex-item-align: end;
+  -webkit-margin-end: 24px;
+  align-self: flex-end;
+  height: 192px;
+  margin-inline-end: 24px;
+  min-width: 192px;
+  width: 192px;
+}
+
+@media screen and (min-width: 1200px) {
+  .playlist-img {
+    height: 232px;
+    min-width: 232px;
+    width: 232px;
+  }
+}
+
+.playlist-img img {
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 4px 60px rgb(0 0 0 / 50%);
+}
+
+.playlist-header-desc {
+}
+
+.playlist-header-desc h2 {
+  font-weight: 700;
+  font-size: 0.75rem;
+  margin-top: 4px;
+  text-transform: uppercase;
+}
+
+.playlist-header-desc h1 {
+  margin: 0.08em 0px 0.12em;
+  visibility: visible;
+  width: 100%;
+  /* font-size: 4.5rem; */
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin-block: 0px;
+  font-size: 3.5rem;
+  font-weight: 900;
+  font-family: var(
+    --font-family,
+    CircularSpTitle,
+    CircularSpTitle-Tall,
+    CircularSp-Arab,
+    CircularSp-Hebr,
+    CircularSp-Cyrl,
+    CircularSp-Grek,
+    CircularSp-Deva,
+    var(--fallback-fonts, sans-serif)
+  );
+}
+
+.playlist-header-desc p {
+  color: hsla(0, 0%, 100%, 0.7);
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: 400;
+  margin-top: 8px;
+}
+
+.playlist-content {
+  margin: 0;
+  max-width: 1955px;
+  padding: 0 16px;
+}
+
+/* clock icon */
+.css-i4bv87-MuiSvgIcon-root {
+  width: 16px !important;
+  height: 16px !important;
+  fill: #a7a7a7 !important;
+}
+
+.playlist-content-table h4,
+.playlist-content-table h3,
+.playlist-content-table span {
+  color: #a7a7a7;
+  box-sizing: border-box;
+  margin-block: 0px;
+  font-size: 0.625rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-family: var(
+    --font-family,
+    CircularSp,
+    CircularSp-Arab,
+    CircularSp-Hebr,
+    CircularSp-Cyrl,
+    CircularSp-Grek,
+    CircularSp-Deva,
+    var(--fallback-fonts)
+  );
+
+  color: #b3b3b3;
+}
+
+.playlist-content-table h2 {
+  box-sizing: border-box;
+  margin-block: 0px;
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-family: var(
+    --font-family,
+    CircularSp,
+    CircularSp-Arab,
+    CircularSp-Hebr,
+    CircularSp-Cyrl,
+    CircularSp-Grek,
+    CircularSp-Deva,
+    var(--fallback-fonts)
+  );
+  color: #b3b3b3;
+}
+
+@media screen and (max-width: 600px) {
+  .playlist-header-desc h1 {
+    font-size: 1.5rem;
+    padding-bottom: 10px;
+  }
+
+  .playlist-img {
+    height: 142px;
+    min-width: 142px;
+    width: 142px;
+  }
+
+  .playlist-header {
+    height: 30vh;
+    max-height: 320px;
+    min-height: 240px;
+  }
+}

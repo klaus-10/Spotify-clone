@@ -1,0 +1,32 @@
+[
+  {
+    "id": "gym",
+    "name": "Pop",
+    "color": "#148a08",
+    "url": "https://i.scdn.co/image/ab67fb8200005cafa862ab80dd85682b37c4e768"
+  },
+  {
+    "id": "gym",
+    "name": "Hip-Hop",
+    "color": "#bc5900",
+    "url": "https://i.scdn.co/image/ab67fb8200005caf7e11c8413dc33c00740579c1"
+  },
+  {
+    "id": "gym",
+    "name": "Latina",
+    "color": "#e1118c",
+    "url": "https://i.scdn.co/image/ab67fb8200005cafa59f90c077c9f618fd0dde30"
+  },
+  {
+    "id": "gym",
+    "name": "Elettronica",
+    "color": "#d84000",
+    "url": "https://i.scdn.co/image/ab67fb8200005cafdfdaac1cf9574a196ca25196"
+  },
+  {
+    "id": "gym",
+    "name": "Classifiche",
+    "color": "#8d67ab",
+    "url": "https://charts-images.scdn.co/assets/locale_en/regional/weekly/region_global_default.jpg"
+  }
+]

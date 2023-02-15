@@ -1,29 +1,29 @@
 {
-    "sidebar": [
-        {
-            "text": "Dashboard",
-            "link": "/dashboardapp",
-            "icon": "dashboard"
-        },
-        {
-            "text": "Home",
-            "link": "/home",
-            "icon": "home"
-        },
-        {
-            "text": "Login",
-            "link": "/login",
-            "icon": "login"
-        },
-        {
-            "text": "Category",
-            "link": "/category",
-            "icon": "category"
-        },
-        {
-            "text": "Saved",
-            "link": "/saved",
-            "icon": "saves"
-        }
-    ]
+  "sidebar": [
+    {
+      "text": "Home",
+      "link": "/home",
+      "icon": "home"
+    },
+    {
+      "text": "Search",
+      "link": "/search",
+      "icon": "search"
+    },
+    {
+      "text": "Library",
+      "link": "/library",
+      "icon": "book"
+    },
+    {
+      "text": "Radio",
+      "link": "/radio",
+      "icon": "radio"
+    },
+    {
+      "text": "Concert",
+      "link": "/concert",
+      "icon": "spatial_audio"
+    }
+  ]
 }

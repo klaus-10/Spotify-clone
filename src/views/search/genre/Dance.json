@@ -1,0 +1,127 @@
+{
+  "sections": [
+    {
+      "title": "Playlist popolari Dance/Elettronica",
+      "desc": [
+        {
+          "id": "37i9dQZF1DX2ENAPP1Tyed",
+          "img": "https://i.scdn.co/image/ab67706f00000002281e393670fdb6795ad62e10",
+          "title": "Dance room 2023",
+          "desc": "INNA in cover di dance room questa settimana! E novità di LUM!X e Gabry Ponte, David Guetta, MEDUZA...",
+          "artist:": "Spotify",
+          "like": "204.100 Mi piace",
+          "number": "75 brani",
+          "duration": "3 ore 15 min"
+        },
+        {
+          "id": "37i9dQZF1DX6e7ijUUjT0E",
+          "img": "https://i.scdn.co/image/ab67706f00000002105a64f74a1f04bd7599f69c",
+          "title": "All the big ones with Chris Lake",
+          "desc": "Allenamento o prepartita, la playlist dance perfetta per darti la carica.",
+          "artist:": "Spotify",
+          "like": "251.646 Mi piace",
+          "number": "60 brani",
+          "duration": "2 ore 45 min"
+        },
+        {
+          "id": "37i9dQZF1DX0BcQWzuB7ZO",
+          "img": "https://i.scdn.co/image/ab67706f00000002b5f6d679ff66799a56c32c4c",
+          "title": "In tendenza",
+          "desc": "Viral & Trending: le canzoni del momento in Italia!",
+          "artist:": "Spotify",
+          "like": "3.712.454 Mi piace",
+          "number": "75 brani",
+          "duration": "3 ore 45 min"
+        }
+      ]
+    },
+
+    {
+      "title": "I nostri DJ Mix preferiti",
+      "desc": [
+        {
+          "id": "37i9dQZF1DXcpzpfnVhpIz",
+          "img": "https://i.scdn.co/image/ab67706f00000002a82cd56879ecfa56abf908d8",
+          "title": "Gabry Ponte's DJ Mix",
+          "desc": "Italian superstar producer & DJ Gabry Ponte promises a good time with his mix featuring recent hits!",
+          "artist:": "Spotify",
+          "like": "13.123 Mi piace",
+          "number": "19 brani",
+          "duration": "59 min 25sec"
+        },
+        {
+          "id": "37i9dQZF1DX81zN3B2MJGq",
+          "img": "https://i.scdn.co/image/ab67706f00000002b592462a225c7a5243472968",
+          "title": "Benny Benassi's Dj Mix",
+          "desc": "Come on a wild ride through Benny Benassi's hits and selections!",
+          "artist:": "Spotify",
+          "like": "10.235 Mi piace",
+          "number": "15 brani",
+          "duration": "1 ora"
+        }
+      ]
+    },
+
+    {
+      "title": "track ID:playlist curate da DJ!",
+      "desc": [
+        {
+          "id": "37i9dQZF1DXdtTK5Bo0anL",
+          "img": "https://i.scdn.co/image/ab67706f00000002702655f5e6708074f6945c77",
+          "title": "Deborah De Luca's track IDs",
+          "desc": "Deborah De Luca's favorite tracks. Updated regularly. Curated by Deborah De Luca.",
+          "artist:": "Spotify",
+          "like": "74.754 Mi piace",
+          "number": "55 brani",
+          "duration": "5 ore 30 min"
+        }
+      ]
+    },
+
+    {
+      "title": "Clubbing",
+      "desc": [
+        {
+          "id": "37i9dQZF1DX6J5NfMJS675",
+          "img": "https://i.scdn.co/image/ab67706f000000026b4f2761dd0762890879e464",
+          "title": "Techno Bunker",
+          "desc": "Welcome to the dark side of the club.",
+          "artist:": "Spotify",
+          "like": "2.143.947 Mi piace",
+          "number": "60 brani",
+          "duration": "circa 5 ore"
+        },
+        {
+          "id": "37i9dQZF1DXa8NOEUWPn9W",
+          "img": "https://i.scdn.co/image/ab67706f00000002c8709ca2caea0f4cd9c614fb",
+          "title": "Housewerk",
+          "desc": "House music lives here. United under one roof, featuring Todd Terry.",
+          "artist:": "Spotify",
+          "like": "1.768.491 Mi piace",
+          "number": "100 brani",
+          "duration": "circa 5 ore"
+        },
+        {
+          "id": "37i9dQZF1DWXDvpUgU6QYl",
+          "img": "https://i.scdn.co/image/ab67706f00000002cccb3e30b2590f38c204b38d",
+          "title": "House is feeling",
+          "desc": "A groovy and soulful house collection. Cover: LOSTBOYJAY",
+          "artist:": "Spotify",
+          "like": "307.276 Mi piace",
+          "number": "60 brani",
+          "duration": "3 ore 45 min"
+        },
+        {
+          "id": "37i9dQZF1DWVY4eLfA3XFQ",
+          "img": "https://i.scdn.co/image/ab67706f000000020a54371feb9d83df2ea258df",
+          "title": "Operator",
+          "desc": "Tech house technicians, featuring HoneyLuv.",
+          "artist:": "Spotify",
+          "like": "575.946 Mi piace",
+          "number": "100 brani",
+          "duration": "circa 5 ore"
+        }
+      ]
+    }
+  ]
+}

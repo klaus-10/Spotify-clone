@@ -1,0 +1,50 @@
+.play-music {
+  display: flex;
+  padding: 24px 32px;
+}
+
+.play-btn {
+  margin-right: 32px;
+}
+
+/* .play-btn span {
+
+  background-color: greenyellow;
+  padding: 10px;
+  border-radius: 50%;
+} */
+
+.play-btn span svg {
+  fill: #1ed760 !important;
+  height: 56px !important;
+  width: 56px !important;
+}
+
+.favorite-btn svg {
+  /* fill: #1ed760 !important; */
+  fill: none !important;
+  stroke: #646464 !important;
+  stroke-width: 2px !important;
+  /* stroke-dasharray: 2, 2 !important; */
+  stroke-linejoin: round !important;
+  height: 32px !important;
+  width: 32px !important;
+  margin-right: 24px !important;
+}
+
+.favorite-btn-2 svg {
+  fill: #1ed760 !important;
+  /* fill: none !important;
+  stroke: #646464 !important;
+  stroke-width: 2px !important; */
+  /* stroke-dasharray: 2, 2 !important; */
+  /* stroke-linejoin: round !important; */
+  height: 32px !important;
+  width: 32px !important;
+  margin-right: 24px !important;
+}
+
+.option-btn svg {
+  height: 32px !important;
+  width: 32px !important;
+}

@@ -21,22 +21,27 @@
 
 .sidebar {
   overflow-x: hidden;
-  left: -270px !important;
+  left: -250px !important;
   position: fixed;
-  width: 270px !important;
+  width: 250px !important;
   height: 100vh;
   max-height: 100vh;
   z-index: 200;
   overflow-y: auto;
   overflow: scroll;
-  border-right: solid 1px #e0e4e7;
-  background: #edf3fc !important;
+  border-right: solid 1px black;
+  background: black !important;
   transform: translateX(0);
-  -webkit-transition: 250ms ease-in-out;
-  -moz-transition: 250ms ease-in-out;
-  -o-transition: 250ms ease-in-out;
-  transition: 250ms ease-in-out;
+  -webkit-transition: 250pxms ease-in-out;
+  -moz-transition: 250pxms ease-in-out;
+  -o-transition: 250pxms ease-in-out;
+  transition: 250pxms ease-in-out;
   /* padding: 0 10px; */
+}
+
+.sidebar-item-link {
+  /* color: black; */
+  text-decoration: none;
 }
 
 .open {
@@ -51,6 +56,12 @@
   z-index: 200;
   /* transition: left 350ms ease-out;
     -webkit-transition: left 350ms ease-out; */
+}
+
+.playlist-container {
+  height: 100%;
+  max-height: 100%;
+  overflow-y: auto;
 }
 
 /* account-slide-box selected item  */
@@ -75,13 +86,17 @@
 }
 
 .css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root.Mui-selected {
-  background-color: #0075ff !important;
+  /* background-color: #0075ff !important; */
   /* color: #fbfdff !important; */
   border-radius: 10px !important;
 }
 
 .slide-text {
   color: #aeb8cb !important;
+}
+.playlist-text {
+  width: 100% !important;
+  text-align: left !important;
 }
 
 .Mui-selected .slide-text {
@@ -108,15 +123,19 @@
 
 .sidebar-logo-icon svg {
   fill: #637b92 !important;
-  width: 40px !important;
-  height: 40px !important;
+  /* width: 40px !important;
+  height: 40px !important; */
 }
 
 .sidebar-logo-admin {
-  padding: 16px 20px !important;
-  background: rgba(145, 158, 171, 0.12);
+  /* padding: 16px 20px !important; */
+  /* background: rgba(145, 158, 171, 0.12); */
   border-radius: 10px !important;
   gap: 10px;
+  padding: 0 !important;
+}
+
+.sidebar-logo-icon svg {
 }
 
 .slide-admin-text span {
@@ -134,5 +153,43 @@
 }
 
 .Mui-selected .css-cveggr-MuiListItemIcon-root {
-  color: #fbfdff !important;
+  color: #ffff !important;
+}
+
+.css-cveggr-MuiListItemIcon-root {
+  min-width: 32px !important;
+}
+
+.slide-text {
+  box-sizing: border-box !important;
+  -webkit-tap-highlight-color: transparent !important;
+  margin-block: 0px !important;
+  font-size: 0.875rem !important;
+  font-weight: 700 !important;
+  font-family: var(
+    --font-family,
+    CircularSp,
+    CircularSp-Arab,
+    CircularSp-Hebr,
+    CircularSp-Cyrl,
+    CircularSp-Grek,
+    CircularSp-Deva,
+    var(--fallback-fonts, sans-serif)
+  ) !important;
+  color: #b3b3b3 !important;
+  padding-left: 10px;
+}
+
+.css-cveggr-MuiListItemIcon-root {
+  color: #b3b3b3 !important;
+}
+
+.css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root.Mui-selected {
+  background-color: transparent !important;
+}
+
+.fwTMCeAaUoWDj9WcQbgy {
+  height: 100px;
+  max-width: 131px;
+  width: 100%;
 }

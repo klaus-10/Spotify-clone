@@ -1,0 +1,60 @@
+.top-artist-songs-row {
+  width: calc(100% - 32px);
+  height: 56px;
+  display: grid;
+  cursor: pointer;
+
+  grid-template-columns: 16px 3fr 2fr 1fr;
+
+  border: 1px solid transparent;
+  border-radius: 4px;
+  height: 56px;
+  position: relative;
+  grid-gap: 16px;
+  padding: 0 16px;
+}
+
+.top-artist-songs-row:hover {
+  /* background-color: hsla(0, 0%, 100%, 0.3); */
+  background-color: hsla(0, 0%, 100%, 0.1);
+}
+
+.top-artist-songs-header h2 {
+  font-size: 0.875rem;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin-block: 0px;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  font-family: var(
+    --font-family,
+    CircularSp,
+    CircularSp-Arab,
+    CircularSp-Hebr,
+    CircularSp-Cyrl,
+    CircularSp-Grek,
+    CircularSp-Deva,
+    var(--fallback-fonts, sans-serif)
+  );
+  color: #ffff;
+}
+
+.top-artist-songs-header h3 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin-block: 0px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: var(
+    --font-family,
+    CircularSpTitle,
+    CircularSpTitle-Tall,
+    CircularSp-Arab,
+    CircularSp-Hebr,
+    CircularSp-Cyrl,
+    CircularSp-Grek,
+    CircularSp-Deva,
+    var(--fallback-fonts, sans-serif)
+  );
+  margin: 0 0 20px;
+}
