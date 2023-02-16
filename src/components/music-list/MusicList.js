@@ -9,7 +9,7 @@ export default function MusicList(props) {
     let c = "";
     tmp.length != 0 &&
       tmp.map((el, index) => {
-        tmp.length - 1 === index ? (c = c + el) : (c = c + el + ", ");
+        tmp.length - 1 === index ? (c = c + el.name) : (c = c + el.name + ", ");
       });
     return c;
   };
@@ -20,7 +20,7 @@ export default function MusicList(props) {
       </div>
       <div className="music-list-title flex-left">
         <div className="music-list-title-img">
-          <img url={props?.url} />
+          <img src={props?.img} />
         </div>
         <div className="music-list-title-desc">
           <span className="standalone-ellipsis-one-line one">

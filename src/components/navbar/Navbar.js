@@ -12,7 +12,7 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import MenuIcon from "@mui/icons-material/Menu";
 import "./Navbar.css";
 import { Divider } from "@mui/material";
-import { LogIn } from "../../utils/Log";
+// import { LogIn } from "../../utils/Log";
 // import { UserContex } from "../../../UserContext";
 
 export default function Navbar(props) {

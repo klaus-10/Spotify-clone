@@ -7,19 +7,20 @@ export default function SongHeader(props) {
     <section className="playlist-header">
       <div className="playlist-header-content contentSpacing-nowidth">
         <div className="playlist-img">
-          <img src={props.img} alt="" />
+          <img src={props.img} alt="" loading="eager" />
         </div>
         <div className="playlist-header-desc">
           <h2>{props.playlist && "playlist"}</h2>
           <h2>{props.music && "brano"}</h2>
           <h1>{props.title}</h1>
           <span className="standalone-ellipsis-one-line">
-            <h3>{props.desc ? props.desc : ""}</h3>
+            <h3>{props.desc && props.playlist ? props.desc : ""}</h3>
           </span>
           <p>
-            Avatar, {props.artist}, {props.listNumber && props.listNumber}{" "}
-            Brani,
-            {props.year && props.year}, {props.duration}
+            Avatar, {props.artist + ","}{" "}
+            {props.listNumber && props.playlist && props.listNumber + " Brani,"}
+            {props.year && props.year + ","}{" "}
+            {props.playlist && props.follower + " seguiti,"} {props.duration}
           </p>
         </div>
       </div>

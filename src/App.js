@@ -30,7 +30,7 @@ function App() {
             <Route path="search" exact element={<Explore />} />
             <Route path="player" exact element={<MusicPlayer />} />
             <Route path="playlist/:id" exact element={<Playlist />} />
-            <Route path="track" exact element={<Track />} />
+            <Route path="track/:id" exact element={<Track />} />
             <Route path="library" exact element={<Library />} />
             <Route path="genre/:id" exact element={<Home />} />
           </Route>
