@@ -11,7 +11,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MenuIcon from "@mui/icons-material/Menu";
 import "./Navbar.css";
-import { Divider } from "@mui/material";
+import { Divider, TextField } from "@mui/material";
 // import { LogIn } from "../../utils/Log";
 // import { UserContex } from "../../../UserContext";
 
@@ -35,6 +35,7 @@ export default function Navbar(props) {
 
   const [user, setUser] = useState(true);
   const [none, setNone] = useState(false);
+  const [filter, setFilter] = useState(false);
 
   useEffect(() => {
     if (
@@ -42,7 +43,12 @@ export default function Navbar(props) {
       location.pathname.includes("/track")
     ) {
       setNone(true);
-    } else setNone(false);
+      if (location.pathname.includes("/track")) setFilter(false);
+      else setFilter(true);
+    } else {
+      setNone(false);
+      setFilter(false);
+    }
   }, [location.pathname]);
 
   useEffect(() => {
@@ -86,8 +92,50 @@ export default function Navbar(props) {
     window.location.reload();
   };
 
+  var prevScrollpos = window.pageYOffset;
+  useEffect(() => {
+    window.onscroll = function () {
+      // var currentScrollPos = window.pageYOffset;
+      // if (prevScrollpos > currentScrollPos) {
+      //   document.getElementById("navbar").style.top = "0";
+      //   if (window.scrollY > 0) {
+      //     document.getElementById("navbar").style.background = "#000";
+      //   } else {
+      //     // document.getElementById("navbar").style.background = "transparent";
+      //     document.getElementById("navbar").style.background = "#000";
+      //   }
+      //   if (window.scrollY === 0) {
+      //     document.getElementById("navbar").style.background = "transparent";
+      //   }
+      // } else {
+      //   // document.getElementById("navbar").style.top = "-70px";
+      //   // document.getElementById("navbar").style.background = "#000";
+      // }
+      // prevScrollpos = currentScrollPos;
+
+      if (window.scrollY > 0 && document.getElementById("navbar")) {
+        document.getElementById("navbar").style.background = "#000";
+      } else {
+        document.getElementById("navbar").style.background = "transparent";
+      }
+    };
+  }, []);
+
+  const handleFilteringChange = (event) => {
+    props.onFiltering(event.target.value);
+    // const timeOutId = setTimeout(
+    //   () => props.onFiltering(event.target.value),
+    //   200
+    // );
+    // return () => clearTimeout(timeOutId);
+  };
+
   return (
     <div
+      onScroll={() => {
+        console.log("ok");
+      }}
+      id="navbar"
       className={
         props.matches
           ? none
@@ -99,18 +147,62 @@ export default function Navbar(props) {
       }
     >
       {props.mediaQy ? (
-        <div className="search-box" style={{ cursor: "pointer" }}>
-          <SearchIcon />
-        </div>
+        <>
+          {filter ? (
+            <div
+              className="search-box-2 flex-left"
+              style={{ cursor: "pointer" }}
+            >
+              <SearchIcon />
+              <form role="search">
+                <input
+                  maxLength="800"
+                  autoCorrect="off"
+                  autoCapitalize="none"
+                  spellCheck="false"
+                  placeholder="Filtro per nome o album"
+                  data-testid="search-input"
+                  data-encore-id="type"
+                  onChange={handleFilteringChange}
+                />
+              </form>
+            </div>
+          ) : (
+            <div> </div>
+          )}
+        </>
       ) : (
-        <div style={{ cursor: "pointer" }} onClick={props.openSide}>
-          {props.side ? "" : <MenuIcon />}
+        <div className="flex-left" style={{ gap: "15px" }}>
+          <MenuIcon
+            onClick={props.openSide}
+            style={{ cursor: "pointer", padding: "5px" }}
+          />
+
+          {filter && (
+            <div
+              className="search-box-2 flex-left"
+              style={{ cursor: "pointer" }}
+            >
+              <form role="search">
+                <input
+                  maxLength="800"
+                  autoCorrect="off"
+                  autoCapitalize="none"
+                  spellCheck="false"
+                  placeholder="Filtro per nome o album"
+                  data-testid="search-input"
+                  data-encore-id="type"
+                  onChange={handleFilteringChange}
+                />
+              </form>
+            </div>
+          )}
         </div>
       )}
 
       <Stack direction="row" spacing={2}>
         <Avatar sx={{ bgcolor: "transparent", cursor: "pointer" }}>
-          <NotificationsIcon />
+          {/* <NotificationsIcon /> */}
         </Avatar>
         <Avatar
           alt="Remy Sharp"
@@ -156,59 +248,7 @@ export default function Navbar(props) {
           >
             admin@gmail.com
           </Typography>
-          {/* <Divider /> */}
-          {/* <div style={{ padding: "10px 5px" }}>
-            <div style={{ padding: "0px 0px" }}>
-              <Typography
-                style={{
-                  fontSize: "13px",
-                  cursor: "pointer",
-                  paddingLeft: "20px",
-                  paddingRight: "50px",
-                  paddingTop: "6px",
-                  paddingBottom: "6px",
-                  borderRadius: "5px",
-                }}
-                className="textHover"
-              >
-                Home
-              </Typography>
-            </div>
-            <div style={{ padding: "0px 0px" }}>
-              <Typography
-                style={{
-                  fontSize: "13px",
-                  cursor: "pointer",
-                  paddingLeft: "20px",
-                  paddingRight: "50px",
-                  paddingTop: "6px",
-                  paddingBottom: "6px",
-                  borderRadius: "5px",
-                }}
-                className="textHover"
-              >
-                Profile
-              </Typography>
-            </div>
-            <div style={{ padding: "0px 0px" }}>
-              <Typography
-                style={{
-                  fontSize: "13px",
-                  cursor: "pointer",
-                  paddingLeft: "20px",
-                  paddingRight: "50px",
-                  paddingTop: "6px",
-                  paddingBottom: "6px",
-                  borderRadius: "5px",
-                }}
-                className="textHover"
-              >
-                Settings
-              </Typography>
-            </div>
-          </div>
 
-          <Divider /> */}
           <div style={{ padding: "0px 0px 10px" }}>
             <Typography
               style={{

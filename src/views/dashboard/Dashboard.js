@@ -55,17 +55,6 @@ export default function Dashboard() {
     }
   }, [localStorage.getItem("access_token")]);
 
-  // playlist
-  // useEffect(() => {
-  //   // const hash = window.location.hash;
-  //   if (JSON.parse(localStorage.getItem("playlist"))?.length !== 0) {
-  //     let tmp = JSON.parse(localStorage.getItem("playlist"));
-  //     setPlaylist(JSON.parse(localStorage.getItem("playlist")));
-  //   } else {
-  //     setPlaylist([]);
-  //   }
-  // }, [localStorage.getItem("playlist")]);
-
   const getUserPlaylist = async () => {
     await axios
       .get("https://api.spotify.com/v1/me/playlists", {
@@ -86,6 +75,12 @@ export default function Dashboard() {
     window.location.reload();
   };
 
+  // filter status
+  const [filter, setFilter] = useState("");
+
+  const handleFilter = (value) => {
+    setFilter(value);
+  };
   return (
     <div className="dashboard">
       {/* <div className="sidebar-handle"> */}
@@ -111,9 +106,10 @@ export default function Dashboard() {
           openSide={handleChangeSide}
           mediaQy={matches}
           reload={reloadPage}
+          onFiltering={handleFilter}
         />
         <div className="outlet-container">
-          <Outlet />
+          <Outlet context={{ filter }} />
         </div>
       </div>
       {/* </div> */}

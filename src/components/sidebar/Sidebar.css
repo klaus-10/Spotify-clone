@@ -32,10 +32,10 @@
   border-right: solid 1px black;
   background: black !important;
   transform: translateX(0);
-  -webkit-transition: 250pxms ease-in-out;
-  -moz-transition: 250pxms ease-in-out;
-  -o-transition: 250pxms ease-in-out;
-  transition: 250pxms ease-in-out;
+  -webkit-transition: 250ms ease-in-out;
+  -moz-transition: 250ms ease-in-out;
+  -o-transition: 250ms ease-in-out;
+  transition: 250ms ease-in-out;
   /* padding: 0 10px; */
 }
 

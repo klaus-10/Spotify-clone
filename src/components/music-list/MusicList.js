@@ -1,8 +1,27 @@
 import React, { useState, useEffect, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 import "./MusicList.css";
 
 export default function MusicList(props) {
+  let navigate = useNavigate();
+
+  const handleNavigate = () => {
+    console.log("ok", props.type);
+    console.log("ok", props.type.toLowerCase());
+
+    switch (props.type.toLowerCase()) {
+      case "tracks":
+        navigate("/track/" + props.id);
+      case "playlist":
+        navigate("/playlist/" + props.id);
+      default:
+        navigate("/playlist/" + props.id);
+      // case "album":
+      //   navigate("/album/" + props.id);
+    }
+  };
+
   const concact = (arr) => {
     let tmp = [...arr];
 
@@ -13,14 +32,24 @@ export default function MusicList(props) {
       });
     return c;
   };
+
   return (
-    <div className="music-list">
-      <div className="music-list-number flex-center">
+    <div
+      className={props.loading ? "music-list loading" : "music-list"}
+      onClick={handleNavigate}
+    >
+      <div
+        className={
+          props.home
+            ? "music-list-number flex-center music-list-2"
+            : "music-list-number flex-center"
+        }
+      >
         <h4>{props?.number}</h4>
       </div>
       <div className="music-list-title flex-left">
         <div className="music-list-title-img">
-          <img src={props?.img} />
+          {props.img && <img src={props?.img} />}
         </div>
         <div className="music-list-title-desc">
           <span className="standalone-ellipsis-one-line one">

@@ -5,6 +5,7 @@ import "./CategoryCard.css";
 export default function CategoryCard(props) {
   return (
     <div
+      key={props.keyId}
       className="category-card"
       style={{ background: `${props.color}` }}
       onClick={props.handleNavigateGenre}

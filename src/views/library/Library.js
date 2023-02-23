@@ -37,6 +37,7 @@ export default function Library(props) {
               title={el.name}
               artist={el.owner.display_name}
               img={el.images[0]?.url}
+              type={"playlist"}
             />
           ))}
         </div>

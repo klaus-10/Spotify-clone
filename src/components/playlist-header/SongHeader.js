@@ -4,10 +4,12 @@ import "./SongHeader.css";
 
 export default function SongHeader(props) {
   return (
-    <section className="playlist-header">
+    <section
+      className={props.loading ? "playlist-header loading" : "playlist-header"}
+    >
       <div className="playlist-header-content contentSpacing-nowidth">
         <div className="playlist-img">
-          <img src={props.img} alt="" loading="eager" />
+          <img src={props.img && props.img} alt="" loading="eager" />
         </div>
         <div className="playlist-header-desc">
           <h2>{props.playlist && "playlist"}</h2>

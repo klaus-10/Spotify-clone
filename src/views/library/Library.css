@@ -1,0 +1,19 @@
+/* @media screen and (max-width: 600px) {
+  .library .song-card {
+    box-shadow: 0 0 2px 8px rgba(94, 94, 94, 0.1);
+  }
+} */
+
+.library {
+  padding-top: 16px;
+}
+
+.library .section-title {
+  padding-left: 16px;
+}
+
+@media screen and (max-width: 600px) {
+  .library .section-title {
+    padding-left: 0px;
+  }
+}

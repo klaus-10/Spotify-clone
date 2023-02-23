@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link, Outlet, useNavigate, useLocation } from "react-router-dom";
 
+import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
+import WindowIcon from "@mui/icons-material/Window";
+
 import ImageSlider from "../../components/carousel/ImageSlider";
 import SongCard from "../../components/music-card/SongCard";
 
@@ -20,9 +23,12 @@ import "./Home.css";
 import { getToken } from "../../utils/getToken";
 import axios from "axios";
 import { GoBack } from "../../utils/Navigation";
+import MusicList from "../../components/music-list/MusicList";
 
-export default function Home() {
+export default function Home(props) {
   const [sections, setSections] = useState(home.sections);
+  const [switchedState, setSwitchedState] = useState(false);
+
   const location = useLocation();
 
   // expand state
@@ -53,6 +59,9 @@ export default function Home() {
     if (location.pathname.includes("pop")) {
       setSections(pop.sections);
     }
+    if (location.pathname.includes("search")) {
+      setSections(props.sections.sections);
+    }
     clearExpandState();
   }, [location.pathname]);
 
@@ -70,7 +79,9 @@ export default function Home() {
     setExpandDesc([...sections]);
   };
 
-  // useEffect()
+  const handleHighlight = () => {
+    setSwitchedState(!switchedState);
+  };
 
   return (
     <div className="home">
@@ -83,10 +94,10 @@ export default function Home() {
               </section>
             )}
 
-            {sections?.map((el, ind) => (
+            {sections?.map((elem, ind) => (
               <section key={ind + "a"} className="contentSpacing-mobile">
                 <div className="flex-bw section-title">
-                  <h2>{el.title}</h2>
+                  <h2>{elem.title}</h2>
                   <h3
                     onClick={() => handleExpandSection(ind)}
                     style={{ cursor: "pointer" }}
@@ -95,13 +106,14 @@ export default function Home() {
                   </h3>
                 </div>
                 <div className="home-content-item">
-                  {el.desc.map((el, index) => (
+                  {elem.desc.map((el, index) => (
                     <SongCard
                       keyId={parseInt(index + ind + "") + "c"}
                       id={el.id}
                       title={el.title}
                       artist={el.desc}
                       img={el.img}
+                      type={elem.title}
                     />
                   ))}
                 </div>
@@ -110,10 +122,34 @@ export default function Home() {
           </>
         ) : (
           <>
-            {expandDesc?.map((el, ind) => (
+            {expandDesc?.map((elem, ind) => (
               <section key={ind + "y"} className="contentSpacing-mobile">
                 <div className="flex-bw section-title">
-                  <h2>{el.title}</h2>
+                  <div
+                    className="section-title-switch flex-center end"
+                    style={{ gap: "20px" }}
+                  >
+                    <h2>{elem.title}</h2>
+                    <div>
+                      <WindowIcon
+                        fontSize="medium"
+                        className={
+                          !switchedState ? "switch highlight" : "switch"
+                        }
+                        onClick={handleHighlight}
+                        style={{ cursor: "pointer", color: "#b3b3b3" }}
+                      />
+                      <FormatListBulletedIcon
+                        fontSize="medium"
+                        className={
+                          switchedState ? "switch highlight" : "switch"
+                        }
+                        onClick={handleHighlight}
+                        style={{ cursor: "pointer", color: "#b3b3b3" }}
+                      />
+                    </div>
+                  </div>
+
                   <h3
                     onClick={() => clearExpandState()}
                     style={{ cursor: "pointer" }}
@@ -121,15 +157,37 @@ export default function Home() {
                     back
                   </h3>
                 </div>
-                <div className="home-content-item-expanded">
-                  {el.desc.map((el, index) => (
-                    <SongCard
-                      keyId={parseInt(index + ind + "") + "e"}
-                      id={el.id}
-                      title={el.title}
-                      artist={el.desc}
-                      img={el.img}
-                    />
+                <div
+                  className={
+                    switchedState
+                      ? "playlist-content music-list-2"
+                      : "home-content-item-expanded resize"
+                  }
+                >
+                  {elem.desc.map((el, index) => (
+                    <>
+                      {switchedState ? (
+                        <MusicList
+                          keyId={parseInt(index + ind + "") + "e"}
+                          number={index + 1}
+                          id={el.id}
+                          title={el.title}
+                          artist={[{ name: el.desc }]}
+                          img={el.img}
+                          home={true}
+                          type={elem.title}
+                        />
+                      ) : (
+                        <SongCard
+                          keyId={parseInt(index + ind + "") + "z"}
+                          id={el.id}
+                          title={el.title}
+                          artist={el.desc}
+                          img={el.img}
+                          type={elem.title}
+                        />
+                      )}
+                    </>
                   ))}
                 </div>
               </section>

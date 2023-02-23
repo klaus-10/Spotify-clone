@@ -13,6 +13,7 @@ import MusicPlayer from "./components/music-player/MusicPlayer";
 import Playlist from "./views/playlist/Playlist";
 import Track from "./views/track/Track";
 import Library from "./views/library/Library";
+import SpotifyPlayer from "./SpotifyPlayer";
 // import GoToTop from "./utils/goToTop";
 
 function App() {
@@ -33,6 +34,8 @@ function App() {
             <Route path="track/:id" exact element={<Track />} />
             <Route path="library" exact element={<Library />} />
             <Route path="genre/:id" exact element={<Home />} />
+            <Route path="album/:id" exact element={<Home />} />
+            <Route path="spotify" exact element={<SpotifyPlayer />} />
           </Route>
 
           <Route path="/log" exact element={<Log />} />

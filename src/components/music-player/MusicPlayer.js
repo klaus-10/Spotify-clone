@@ -1,7 +1,8 @@
-import PlayCircle from "@mui/icons-material/PlayCircle";
 import React, { useRef, useEffect, useState, forwardRef } from "react";
 import WaveSurfer from "wavesurfer.js";
-import MusicList from "../music-list/MusicList";
+
+import PauseIcon from "@mui/icons-material/Pause";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 
 import "./MusicPlayer.css";
 
@@ -81,14 +82,18 @@ const MusicPlayer = (
       </div>
       <div className="wave-container">
         <div id="wave" ref={waveRef} />
-        <button
+        <div
           onClick={() => {
             handlePlay();
             handlePlayParent();
           }}
         >
-          {isPlaying ? "pause" : "play"}
-        </button>
+          {isPlaying ? (
+            <PauseIcon fontSize="large" />
+          ) : (
+            <PlayArrowIcon fontSize="large" />
+          )}
+        </div>
       </div>
       <input
         type="range"
@@ -96,6 +101,7 @@ const MusicPlayer = (
         max="100"
         value={volume * 100}
         onChange={handleVolume}
+        className="volume"
       />
     </div>
   );
