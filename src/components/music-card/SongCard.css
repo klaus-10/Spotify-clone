@@ -91,7 +91,7 @@
   color: inherit;
 }
 
-.song-card-desc a {
+.song-card-desc p {
   /* box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
   margin-block: 0px;
@@ -156,7 +156,8 @@
     max-height: 160px;
     min-height: 160px;
     border-radius: 0;
-    padding: 0;
+    padding: 0px;
+    background: transparent !important;
   }
 
   .song-card:hover {
@@ -172,6 +173,8 @@
   }
   .song-card-desc {
     min-height: none;
+    /* width: calc(100% - 20px);
+    padding: 0 10px; */
   }
   .song-card-desc h3 {
     font-size: 0.75rem;
@@ -194,11 +197,11 @@
     );
   }
 
-  .home-content {
+  /* .home-content {
     background: #181818;
-  }
+  } */
 
-  .song-card-desc a {
+  .song-card-desc p {
     font-size: 0.7rem;
   }
 }

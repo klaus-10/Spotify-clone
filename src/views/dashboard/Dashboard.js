@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { Link, Outlet, useNavigate, useLocation } from "react-router-dom";
-import axios from "axios";
-import queryString from "query-string";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 
-import "./Dashboard.css";
 import Navbar from "../../components/navbar/Navbar";
 import Sidebar from "../../components/sidebar/Sidebar";
+import "./Dashboard.css";
 
 export default function Dashboard() {
   let navigate = useNavigate();
@@ -45,8 +44,17 @@ export default function Dashboard() {
       const token = hash.substring(1).split("&")[0].split("=")[1];
       localStorage.setItem("access_token", token);
       getUserPlaylist();
+      window.history.replaceState(
+        {},
+        document.title,
+        window.location.pathname + window.location.search
+      );
     }
   }, []);
+
+  useEffect(() => {
+    if (location.pathname === "/") navigate("/home");
+  }, [location.pathname]);
 
   useEffect(() => {
     if (localStorage.getItem("access_token")) {
@@ -54,17 +62,6 @@ export default function Dashboard() {
       setPlaylist([]);
     }
   }, [localStorage.getItem("access_token")]);
-
-  // playlist
-  // useEffect(() => {
-  //   // const hash = window.location.hash;
-  //   if (JSON.parse(localStorage.getItem("playlist"))?.length !== 0) {
-  //     let tmp = JSON.parse(localStorage.getItem("playlist"));
-  //     setPlaylist(JSON.parse(localStorage.getItem("playlist")));
-  //   } else {
-  //     setPlaylist([]);
-  //   }
-  // }, [localStorage.getItem("playlist")]);
 
   const getUserPlaylist = async () => {
     await axios
@@ -79,13 +76,34 @@ export default function Dashboard() {
         localStorage.setItem("playlist", JSON.stringify(tmp));
         setPlaylist(tmp);
       })
-      .catch((err) => console.log("Playlist err", err));
+      .catch((err) => {
+        console.log("Playlist err", err);
+        handleLogOut();
+      });
   };
 
   const reloadPage = () => {
     window.location.reload();
   };
 
+  // filter status
+  const [filter, setFilter] = useState("");
+
+  const handleFilter = (value) => {
+    setFilter(value);
+  };
+
+  const handleLogOut = () => {
+    window.history.replaceState(
+      {},
+      document.title,
+      window.location.pathname + window.location.search
+    );
+
+    localStorage.removeItem("playlist");
+    localStorage.removeItem("access_token");
+    window.location.reload();
+  };
   return (
     <div className="dashboard">
       {/* <div className="sidebar-handle"> */}
@@ -111,9 +129,10 @@ export default function Dashboard() {
           openSide={handleChangeSide}
           mediaQy={matches}
           reload={reloadPage}
+          onFiltering={handleFilter}
         />
         <div className="outlet-container">
-          <Outlet />
+          <Outlet context={{ filter }} />
         </div>
       </div>
       {/* </div> */}

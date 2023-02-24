@@ -1,11 +1,15 @@
-import PlayCircle from "@mui/icons-material/PlayCircle";
-import React, { useRef, useEffect, useState, forwardRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import WaveSurfer from "wavesurfer.js";
-import MusicList from "../music-list/MusicList";
+
+import PauseIcon from "@mui/icons-material/Pause";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 
 import "./MusicPlayer.css";
 
-const MusicPlayer = ({ src, handlePlayParent, play }, ref) => {
+const MusicPlayer = (
+  { src, handlePlayParent, play, title, artist, img },
+  ref
+) => {
   const waveRef = useRef(null);
   const [wavesurfer, setWavesurfer] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -32,13 +36,8 @@ const MusicPlayer = ({ src, handlePlayParent, play }, ref) => {
       partialRender: true,
     });
 
-    ws.load(src);
+    ws.load(src ? src : "");
     ws.setVolume(volume);
-
-    // ws.on("ready", () => {
-    //   setIsPlaying(play);
-    //   ws.play();
-    // });
 
     setWavesurfer(ws);
 
@@ -46,10 +45,6 @@ const MusicPlayer = ({ src, handlePlayParent, play }, ref) => {
       ws.destroy();
     };
   }, []);
-
-  // useEffect(() => {
-  //   handlePlay();
-  // }, [play]);
 
   const handlePlay = () => {
     setIsPlaying(!isPlaying);
@@ -69,27 +64,27 @@ const MusicPlayer = ({ src, handlePlayParent, play }, ref) => {
     <div className="music-player">
       <div className="music-player-track flex-center">
         <div className="music-player-track-img">
-          <img
-            src="https://source.unsplash.com/9D_rUDe7xvA"
-            width={"56px"}
-            height={"56px"}
-          />
+          <img alt="" src={img} width={"56px"} height={"56px"} />
         </div>
         <div className="music-player-track-desc">
-          <h3>Titulo</h3>
-          <h4>Artist</h4>
+          <h3>{title}</h3>
+          <h4>{artist}</h4>
         </div>
       </div>
       <div className="wave-container">
         <div id="wave" ref={waveRef} />
-        <button
+        <div
           onClick={() => {
             handlePlay();
             handlePlayParent();
           }}
         >
-          {isPlaying ? "pause" : "play"}
-        </button>
+          {isPlaying ? (
+            <PauseIcon fontSize="large" />
+          ) : (
+            <PlayArrowIcon fontSize="large" />
+          )}
+        </div>
       </div>
       <input
         type="range"
@@ -97,6 +92,7 @@ const MusicPlayer = ({ src, handlePlayParent, play }, ref) => {
         max="100"
         value={volume * 100}
         onChange={handleVolume}
+        className="volume"
       />
     </div>
   );

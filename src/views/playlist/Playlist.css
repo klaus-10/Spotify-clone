@@ -129,7 +129,7 @@
 }
 
 /* clock icon */
-.css-i4bv87-MuiSvgIcon-root {
+.music-list-duration .css-i4bv87-MuiSvgIcon-root {
   width: 16px !important;
   height: 16px !important;
   fill: #a7a7a7 !important;
@@ -193,7 +193,13 @@
 
   .playlist-header {
     height: 30vh;
-    max-height: 320px;
-    min-height: 240px;
+    max-height: 280px;
+    min-height: 280px;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 860px) {
+  .playlist-header-desc h1 {
+    font-size: 2.5rem;
   }
 }

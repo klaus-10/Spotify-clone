@@ -72,3 +72,15 @@
 .wave-container canvas {
   height: 20px;
 }
+
+@media screen and (max-width: 800px) {
+  .wave-container {
+    justify-content: right;
+  }
+  #wave {
+    display: none;
+  }
+  .volume {
+    display: none;
+  }
+}

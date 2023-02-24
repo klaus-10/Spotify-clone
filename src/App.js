@@ -1,45 +1,37 @@
-import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// context
-// import { UserContex } from "./UserContext";
-import logo from "./logo.svg";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Dashboard from "./views/dashboard/Dashboard";
-import Log from "./views/login/Log";
-import Home from "./views/home/Home";
-import Explore from "./views/search/Explore";
-import MusicList from "./components/music-list/MusicList";
 import MusicPlayer from "./components/music-player/MusicPlayer";
-import Playlist from "./views/playlist/Playlist";
-import Track from "./views/track/Track";
+import SpotifyPlayer from "./SpotifyPlayer";
+import Dashboard from "./views/dashboard/Dashboard";
+import Home from "./views/home/Home";
 import Library from "./views/library/Library";
-// import GoToTop from "./utils/goToTop";
+import Log from "./views/login/Log";
+import Playlist from "./views/playlist/Playlist";
+import Explore from "./views/search/Explore";
+import Track from "./views/track/Track";
 
 function App() {
-  // stato generale app login user
-  // const [value, setValue] = useState(true);
-
   return (
-    // <UserContex.Provider value={{ value, setValue }}>
     <Router>
       <div className="App">
-        {/* <GoToTop /> */}
         <Routes>
-          <Route path="/" exact element={<Dashboard />}>
-            <Route path="home" exact element={<Home />} />
-            <Route path="search" exact element={<Explore />} />
-            <Route path="player" exact element={<MusicPlayer />} />
-            <Route path="playlist/:id" exact element={<Playlist />} />
-            <Route path="track" exact element={<Track />} />
-            <Route path="library" exact element={<Library />} />
-            <Route path="genre/:id" exact element={<Home />} />
+          <Route path="/" element={<Dashboard />}>
+            <Route path="home" element={<Home />} />
+            <Route path="search" element={<Explore />} />
+            <Route path="player" element={<MusicPlayer />} />
+            <Route path="playlist/:id" element={<Playlist />} />
+            <Route path="track/:id" element={<Track />} />
+            <Route path="library" element={<Library />} />
+            <Route path="genre/:id" element={<Home />} />
+            <Route path="album/:id" element={<Home />} />
+            <Route path="spotify" element={<SpotifyPlayer />} />
           </Route>
 
-          <Route path="/log" exact element={<Log />} />
+          <Route path="/log" element={<Log />} />
         </Routes>
       </div>
     </Router>
-    // </UserContex.Provider>
   );
 }
 

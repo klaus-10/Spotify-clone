@@ -1,18 +1,16 @@
-import React, { useState, useEffect, useContext } from "react";
-import { Link, Outlet, useNavigate, useLocation } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
-import Stack from "@mui/material/Stack";
 import Popover from "@mui/material/Popover";
+import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 // icnos
-import SearchIcon from "@mui/icons-material/Search";
-import NotificationsIcon from "@mui/icons-material/Notifications";
 import MenuIcon from "@mui/icons-material/Menu";
-import "./Navbar.css";
+import SearchIcon from "@mui/icons-material/Search";
 import { Divider } from "@mui/material";
-import { LogIn } from "../../utils/Log";
+import "./Navbar.css";
+// import { LogIn } from "../../utils/Log";
 // import { UserContex } from "../../../UserContext";
 
 export default function Navbar(props) {
@@ -35,6 +33,7 @@ export default function Navbar(props) {
 
   const [user, setUser] = useState(true);
   const [none, setNone] = useState(false);
+  const [filter, setFilter] = useState(false);
 
   useEffect(() => {
     if (
@@ -42,7 +41,12 @@ export default function Navbar(props) {
       location.pathname.includes("/track")
     ) {
       setNone(true);
-    } else setNone(false);
+      if (location.pathname.includes("/track")) setFilter(false);
+      else setFilter(true);
+    } else {
+      setNone(false);
+      setFilter(false);
+    }
   }, [location.pathname]);
 
   useEffect(() => {
@@ -60,34 +64,54 @@ export default function Navbar(props) {
     const scope = [
       "user-read-private",
       "user-read-email",
-      // "user-modify-playback-state",
-      // "user-read-playback-state",
-      // "user-read-currently-playing",
       "user-read-recently-played",
       "user-top-read",
     ];
     window.location.href = `${api_uri}?client_id=${client_id}&redirect_uri=${redirect_uri}&scope=${scope.join(
       " "
     )}&response_type=token&show_dialog=true`;
-
-    // axios.get("https://accounts.spotify.com/authorize?" + stringify)
   };
 
   const handleLogIn = () => {
-    // LogIn();
     handleLoginClick();
   };
 
   const handleLogOut = () => {
+    window.history.replaceState(
+      {},
+      document.title,
+      window.location.pathname + window.location.search
+    );
+
     localStorage.removeItem("playlist");
     localStorage.removeItem("access_token");
     handleClose();
-    window.location = window.location.href.replace(/#.*$/, "");
     window.location.reload();
+  };
+
+  var prevScrollpos = window.pageYOffset;
+  useEffect(() => {
+    window.onscroll = function () {
+      if (window.scrollY > 0 && document.getElementById("navbar")) {
+        document.getElementById("navbar").style.background = "#000";
+      } else {
+        document.getElementById("navbar").style.background = "transparent";
+      }
+    };
+  }, []);
+
+  const handleFilteringChange = (event) => {
+    props.onFiltering(event.target.value);
+    // const timeOutId = setTimeout(
+    //   () => props.onFiltering(event.target.value),
+    //   200
+    // );
+    // return () => clearTimeout(timeOutId);
   };
 
   return (
     <div
+      id="navbar"
       className={
         props.matches
           ? none
@@ -99,18 +123,62 @@ export default function Navbar(props) {
       }
     >
       {props.mediaQy ? (
-        <div className="search-box" style={{ cursor: "pointer" }}>
-          <SearchIcon />
-        </div>
+        <>
+          {filter ? (
+            <div
+              className="search-box-2 flex-left"
+              style={{ cursor: "pointer" }}
+            >
+              <SearchIcon />
+              <form role="search">
+                <input
+                  maxLength="800"
+                  autoCorrect="off"
+                  autoCapitalize="none"
+                  spellCheck="false"
+                  placeholder="Filtro per nome o album"
+                  data-testid="search-input"
+                  data-encore-id="type"
+                  onChange={handleFilteringChange}
+                />
+              </form>
+            </div>
+          ) : (
+            <div> </div>
+          )}
+        </>
       ) : (
-        <div style={{ cursor: "pointer" }} onClick={props.openSide}>
-          {props.side ? "" : <MenuIcon />}
+        <div className="flex-left" style={{ gap: "15px" }}>
+          <MenuIcon
+            onClick={props.openSide}
+            style={{ cursor: "pointer", padding: "5px" }}
+          />
+
+          {filter && (
+            <div
+              className="search-box-2 flex-left"
+              style={{ cursor: "pointer" }}
+            >
+              <form role="search">
+                <input
+                  maxLength="800"
+                  autoCorrect="off"
+                  autoCapitalize="none"
+                  spellCheck="false"
+                  placeholder="Filtro per nome o album"
+                  data-testid="search-input"
+                  data-encore-id="type"
+                  onChange={handleFilteringChange}
+                />
+              </form>
+            </div>
+          )}
         </div>
       )}
 
       <Stack direction="row" spacing={2}>
         <Avatar sx={{ bgcolor: "transparent", cursor: "pointer" }}>
-          <NotificationsIcon />
+          {/* <NotificationsIcon /> */}
         </Avatar>
         <Avatar
           alt="Remy Sharp"
@@ -156,59 +224,7 @@ export default function Navbar(props) {
           >
             admin@gmail.com
           </Typography>
-          {/* <Divider /> */}
-          {/* <div style={{ padding: "10px 5px" }}>
-            <div style={{ padding: "0px 0px" }}>
-              <Typography
-                style={{
-                  fontSize: "13px",
-                  cursor: "pointer",
-                  paddingLeft: "20px",
-                  paddingRight: "50px",
-                  paddingTop: "6px",
-                  paddingBottom: "6px",
-                  borderRadius: "5px",
-                }}
-                className="textHover"
-              >
-                Home
-              </Typography>
-            </div>
-            <div style={{ padding: "0px 0px" }}>
-              <Typography
-                style={{
-                  fontSize: "13px",
-                  cursor: "pointer",
-                  paddingLeft: "20px",
-                  paddingRight: "50px",
-                  paddingTop: "6px",
-                  paddingBottom: "6px",
-                  borderRadius: "5px",
-                }}
-                className="textHover"
-              >
-                Profile
-              </Typography>
-            </div>
-            <div style={{ padding: "0px 0px" }}>
-              <Typography
-                style={{
-                  fontSize: "13px",
-                  cursor: "pointer",
-                  paddingLeft: "20px",
-                  paddingRight: "50px",
-                  paddingTop: "6px",
-                  paddingBottom: "6px",
-                  borderRadius: "5px",
-                }}
-                className="textHover"
-              >
-                Settings
-              </Typography>
-            </div>
-          </div>
 
-          <Divider /> */}
           <div style={{ padding: "0px 0px 10px" }}>
             <Typography
               style={{

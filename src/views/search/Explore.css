@@ -18,6 +18,9 @@
 }
 .explore-title {
   padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .explore-title h2 {
   box-sizing: border-box;
@@ -37,6 +40,11 @@
     var(--fallback-fonts, sans-serif)
   );
   color: #fff;
+}
+
+input:focus {
+  outline: none !important;
+  border: none !important;
 }
 
 @media screen and (max-width: 400px) {
