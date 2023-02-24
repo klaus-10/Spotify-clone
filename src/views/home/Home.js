@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, Outlet, useNavigate, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 import WindowIcon from "@mui/icons-material/Window";
@@ -8,22 +8,17 @@ import ImageSlider from "../../components/carousel/ImageSlider";
 import SongCard from "../../components/music-card/SongCard";
 
 //material components
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
 
 //home data
-import home from "./Home.json";
-import pop from "../search/genre/Pop.json";
 import classifiche from "../search/genre/Classifiche.json";
 import dance from "../search/genre/Dance.json";
-import latina from "../search/genre/Latina.json";
 import hiphop from "../search/genre/Hip-hop.json";
+import latina from "../search/genre/Latina.json";
+import pop from "../search/genre/Pop.json";
+import home from "./Home.json";
 
-import "./Home.css";
-import { getToken } from "../../utils/getToken";
-import axios from "axios";
-import { GoBack } from "../../utils/Navigation";
 import MusicList from "../../components/music-list/MusicList";
+import "./Home.css";
 
 export default function Home(props) {
   const [sections, setSections] = useState(home.sections);
@@ -95,7 +90,7 @@ export default function Home(props) {
             )}
 
             {sections?.map((elem, ind) => (
-              <section key={ind + "a"} className="contentSpacing-mobile">
+              <section key={ind + "m"} className="contentSpacing-mobile">
                 <div className="flex-bw section-title">
                   <h2>{elem.title}</h2>
                   <h3

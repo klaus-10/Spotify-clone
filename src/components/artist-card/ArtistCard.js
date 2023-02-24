@@ -1,31 +1,12 @@
-import React, { useState, useEffect, useContext } from "react";
-
-import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import PauseIcon from "@mui/icons-material/Pause";
-
-import PauseCircleIcon from "@mui/icons-material/PauseCircle";
-import PlayCircleIcon from "@mui/icons-material/PlayCircle";
-import FavoriteIcon from "@mui/icons-material/Favorite";
+import React from "react";
 
 import "./ArtistCard.css";
 
 export default function ArtistCard(props) {
-  const [play, setPlay] = useState(false);
-
-  const [favorite, setFavorite] = useState(false);
-
-  const handlePlay = () => {
-    setPlay(!play);
-  };
-  const handleFavorite = () => {
-    setFavorite(!favorite);
-  };
-
   return (
     <section className="artist-card contentSpacing flex-left">
       <div className="artist-card-img">
-        <img src="https://source.unsplash.com/YrtFlrLo2DQ" />
+        <img alt="" src="https://source.unsplash.com/YrtFlrLo2DQ" />
       </div>
 
       <div className="artist-card-desc">

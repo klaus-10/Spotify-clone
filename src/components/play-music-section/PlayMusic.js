@@ -1,12 +1,10 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState } from "react";
 
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import PauseIcon from "@mui/icons-material/Pause";
 
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import PauseCircleIcon from "@mui/icons-material/PauseCircle";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
-import FavoriteIcon from "@mui/icons-material/Favorite";
 
 import "./PlayMusic.css";
 

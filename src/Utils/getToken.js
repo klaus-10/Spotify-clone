@@ -1,5 +1,4 @@
 import axios from "axios";
-import Axios from "axios";
 
 export const getToken = async () => {
   var client_id = "f7e65796b4084a6e92eeeb4b5c415230";

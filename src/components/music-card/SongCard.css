@@ -91,7 +91,7 @@
   color: inherit;
 }
 
-.song-card-desc a {
+.song-card-desc p {
   /* box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
   margin-block: 0px;
@@ -201,7 +201,7 @@
     background: #181818;
   } */
 
-  .song-card-desc a {
+  .song-card-desc p {
     font-size: 0.7rem;
   }
 }

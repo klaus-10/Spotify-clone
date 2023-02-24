@@ -106,3 +106,11 @@
 .css-1urig74-MuiAvatar-root {
   display: none !important;
 }
+
+@media screen and (min-width: 500px) {
+  .css-e53awj-MuiStack-root {
+    position: fixed !important;
+    top: 16px !important;
+    right: 16px !important;
+  }
+}

@@ -1,17 +1,15 @@
-import React, { useState, useEffect, useContext } from "react";
-import { Link, Outlet, useNavigate, useLocation } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
-import Stack from "@mui/material/Stack";
 import Popover from "@mui/material/Popover";
+import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 // icnos
-import SearchIcon from "@mui/icons-material/Search";
-import NotificationsIcon from "@mui/icons-material/Notifications";
 import MenuIcon from "@mui/icons-material/Menu";
+import SearchIcon from "@mui/icons-material/Search";
+import { Divider } from "@mui/material";
 import "./Navbar.css";
-import { Divider, TextField } from "@mui/material";
 // import { LogIn } from "../../utils/Log";
 // import { UserContex } from "../../../UserContext";
 
@@ -66,53 +64,34 @@ export default function Navbar(props) {
     const scope = [
       "user-read-private",
       "user-read-email",
-      // "user-modify-playback-state",
-      // "user-read-playback-state",
-      // "user-read-currently-playing",
       "user-read-recently-played",
       "user-top-read",
     ];
     window.location.href = `${api_uri}?client_id=${client_id}&redirect_uri=${redirect_uri}&scope=${scope.join(
       " "
     )}&response_type=token&show_dialog=true`;
-
-    // axios.get("https://accounts.spotify.com/authorize?" + stringify)
   };
 
   const handleLogIn = () => {
-    // LogIn();
     handleLoginClick();
   };
 
   const handleLogOut = () => {
+    window.history.replaceState(
+      {},
+      document.title,
+      window.location.pathname + window.location.search
+    );
+
     localStorage.removeItem("playlist");
     localStorage.removeItem("access_token");
     handleClose();
-    window.location = window.location.href.replace(/#.*$/, "");
     window.location.reload();
   };
 
   var prevScrollpos = window.pageYOffset;
   useEffect(() => {
     window.onscroll = function () {
-      // var currentScrollPos = window.pageYOffset;
-      // if (prevScrollpos > currentScrollPos) {
-      //   document.getElementById("navbar").style.top = "0";
-      //   if (window.scrollY > 0) {
-      //     document.getElementById("navbar").style.background = "#000";
-      //   } else {
-      //     // document.getElementById("navbar").style.background = "transparent";
-      //     document.getElementById("navbar").style.background = "#000";
-      //   }
-      //   if (window.scrollY === 0) {
-      //     document.getElementById("navbar").style.background = "transparent";
-      //   }
-      // } else {
-      //   // document.getElementById("navbar").style.top = "-70px";
-      //   // document.getElementById("navbar").style.background = "#000";
-      // }
-      // prevScrollpos = currentScrollPos;
-
       if (window.scrollY > 0 && document.getElementById("navbar")) {
         document.getElementById("navbar").style.background = "#000";
       } else {
@@ -132,9 +111,6 @@ export default function Navbar(props) {
 
   return (
     <div
-      onScroll={() => {
-        console.log("ok");
-      }}
       id="navbar"
       className={
         props.matches

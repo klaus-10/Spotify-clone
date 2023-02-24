@@ -1,28 +1,23 @@
-import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
+import Divider from "@mui/material/Divider";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import Divider from "@mui/material/Divider";
-import Avatar from "@mui/material/Avatar";
-import GraphicEqIcon from "@mui/icons-material/GraphicEq";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 // import Icon from "../../../components/Icon";
 import { Icon } from "@mui/material/";
 
 // import * as MuiIcons from "@mui/icons-material";
-import InboxIcon from "@mui/icons-material/Inbox";
-import DraftsIcon from "@mui/icons-material/Drafts";
 
 // react router elements
 import { Link, useLocation } from "react-router-dom";
 
 import elements from "./Sidebar.json";
 
-import "./Sidebar.css";
 import { ListItem } from "@mui/material";
+import "./Sidebar.css";
 
 export default function Sidebar(props) {
   const [selectedIndex, setSelectedIndex] = React.useState(1);
@@ -39,8 +34,9 @@ export default function Sidebar(props) {
     let t = location.pathname.split("/");
     if (location.pathname === "/" || location.pathname === "/playlist")
       setSelectedIndex(-1);
-    if (location.pathname === "/home") setSelectedIndex(0);
-    if (location.pathname === "/explore") setSelectedIndex(1);
+    if (location.pathname.includes("/home")) setSelectedIndex(0);
+    if (location.pathname.includes("/explore")) setSelectedIndex(1);
+    if (location.pathname.includes("/library")) setSelectedIndex(2);
   }, [location.pathname]);
 
   return (

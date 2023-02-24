@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import "./MusicList.css";
@@ -13,10 +13,13 @@ export default function MusicList(props) {
     switch (props.type.toLowerCase()) {
       case "tracks":
         navigate("/track/" + props.id);
+        break;
       case "playlist":
         navigate("/playlist/" + props.id);
+        break;
       default:
         navigate("/playlist/" + props.id);
+        break;
       // case "album":
       //   navigate("/album/" + props.id);
     }
@@ -26,8 +29,8 @@ export default function MusicList(props) {
     let tmp = [...arr];
 
     let c = "";
-    tmp.length != 0 &&
-      tmp.map((el, index) => {
+    tmp.length !== 0 &&
+      tmp.forEach((el, index) => {
         tmp.length - 1 === index ? (c = c + el.name) : (c = c + el.name + ", ");
       });
     return c;
@@ -49,7 +52,7 @@ export default function MusicList(props) {
       </div>
       <div className="music-list-title flex-left">
         <div className="music-list-title-img">
-          {props.img && <img src={props?.img} />}
+          {props.img && <img alt="" src={props?.img} />}
         </div>
         <div className="music-list-title-desc">
           <span className="standalone-ellipsis-one-line one">

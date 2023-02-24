@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, forwardRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import WaveSurfer from "wavesurfer.js";
 
 import PauseIcon from "@mui/icons-material/Pause";
@@ -39,21 +39,12 @@ const MusicPlayer = (
     ws.load(src ? src : "");
     ws.setVolume(volume);
 
-    // ws.on("ready", () => {
-    //   setIsPlaying(play);
-    //   ws.play();
-    // });
-
     setWavesurfer(ws);
 
     return () => {
       ws.destroy();
     };
   }, []);
-
-  // useEffect(() => {
-  //   handlePlay();
-  // }, [play]);
 
   const handlePlay = () => {
     setIsPlaying(!isPlaying);
@@ -73,7 +64,7 @@ const MusicPlayer = (
     <div className="music-player">
       <div className="music-player-track flex-center">
         <div className="music-player-track-img">
-          <img src={img} width={"56px"} height={"56px"} />
+          <img alt="" src={img} width={"56px"} height={"56px"} />
         </div>
         <div className="music-player-track-desc">
           <h3>{title}</h3>

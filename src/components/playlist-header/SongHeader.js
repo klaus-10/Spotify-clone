@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React from "react";
 
 import "./SongHeader.css";
 
@@ -9,7 +9,7 @@ export default function SongHeader(props) {
     >
       <div className="playlist-header-content contentSpacing-nowidth">
         <div className="playlist-img">
-          <img src={props.img && props.img} alt="" loading="eager" />
+          <img alt="" src={props.img && props.img} loading="eager" />
         </div>
         <div className="playlist-header-desc">
           <h2>{props.playlist && "playlist"}</h2>

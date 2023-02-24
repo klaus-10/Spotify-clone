@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useContext } from "react";
-import { useNavigate } from "react-router-dom";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import "./SongCard.css";
 
@@ -9,16 +9,16 @@ export default function SongCard(props) {
   const matches = useMediaQuery("(max-width:600px)");
 
   const handleNavigate = () => {
-    console.log("ok", props.type);
-    console.log("ok", props.type.toLowerCase());
-
     switch (props.type.toLowerCase()) {
       case "tracks":
         navigate("/track/" + props.id);
+        break;
       case "playlist":
         navigate("/playlist/" + props.id);
+        break;
       default:
         navigate("/playlist/" + props.id);
+        break;
       // case "album":
       //   navigate("/album/" + props.id);
     }
@@ -27,7 +27,7 @@ export default function SongCard(props) {
   return (
     <div key={props.keyId} className={"song-card"} onClick={handleNavigate}>
       <div className={props.img ? "song-card-img" : "song-card-img bg"}>
-        <img src={props.img}></img>
+        <img alt="" src={props.img}></img>
       </div>
       <div className="song-card-desc">
         <h3>{props.title}</h3>
@@ -39,9 +39,9 @@ export default function SongCard(props) {
               : "standalone-ellipsis-three-line"
           }
         >
-          <a>
+          <p>
             {props.artist} {props.time}
-          </a>
+          </p>
         </span>
       </div>
     </div>
