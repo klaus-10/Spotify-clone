@@ -53,6 +53,10 @@ export default function Dashboard() {
   }, []);
 
   useEffect(() => {
+    if (location.pathname === "/") navigate("/home");
+  }, [location.pathname]);
+
+  useEffect(() => {
     if (localStorage.getItem("access_token")) {
     } else {
       setPlaylist([]);

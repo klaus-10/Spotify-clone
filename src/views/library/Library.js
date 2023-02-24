@@ -16,7 +16,10 @@ export default function Library(props) {
   }, []);
 
   useEffect(() => {
-    if (localStorage.getItem("access_token")) {
+    if (
+      localStorage.getItem("access_token") &&
+      localStorage.getItem("playlist")
+    ) {
       setLog(true);
     } else {
       setLibrary(false);
