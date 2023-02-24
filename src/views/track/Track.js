@@ -18,6 +18,7 @@ export default function Track(props) {
   const [play, setPlay] = useState(false);
   const [lyrics, setLyrics] = useState([]);
   const [track, setTrack] = useState({});
+  console.log("track", track);
   const [topArtistSongs, setTopArtistSongs] = useState([]);
 
   // Id params from url
