@@ -128,7 +128,7 @@ export default function Explore() {
       numberOfTopResults: "5",
     },
     headers: {
-      "X-RapidAPI-Key": "f487b515d5msh5d32ce521512fe1p186b06jsne65ab660d72b",
+      "X-RapidAPI-Key": "63b40bb6fbmshf9a5c66d0d7ab1ap12b174jsn3902feec3bbd",
       "X-RapidAPI-Host": "spotify23.p.rapidapi.com",
     },
   };

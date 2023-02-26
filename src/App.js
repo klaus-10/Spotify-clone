@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import MusicPlayer from "./components/music-player/MusicPlayer";
-import SpotifyPlayer from "./SpotifyPlayer";
 import Dashboard from "./views/dashboard/Dashboard";
 import Home from "./views/home/Home";
 import Library from "./views/library/Library";
@@ -25,7 +24,6 @@ function App() {
             <Route path="library" element={<Library />} />
             <Route path="genre/:id" element={<Home />} />
             <Route path="album/:id" element={<Home />} />
-            <Route path="spotify" element={<SpotifyPlayer />} />
           </Route>
 
           <Route path="/log" element={<Log />} />
