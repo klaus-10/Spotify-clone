@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import MusicPlayer from "./components/music-player/MusicPlayer";
@@ -13,6 +13,13 @@ import Explore from "./views/search/Explore";
 import Track from "./views/track/Track";
 
 function App() {
+
+//scroll to top
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.querySelector("body").scrollTo(0, 0);
+  }, []);
+
   return (
     <Router>
       <div className="App">

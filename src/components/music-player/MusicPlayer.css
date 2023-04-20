@@ -76,9 +76,10 @@
 @media screen and (max-width: 800px) {
   .wave-container {
     justify-content: right;
+    flex-direction: row;
   }
   #wave {
-    display: none;
+    visibility: hidden;
   }
   .volume {
     display: none;

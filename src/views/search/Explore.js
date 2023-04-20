@@ -81,7 +81,7 @@ export default function Explore() {
 
         response.data.tracks.items.forEach((el) => {
           let tmp = {
-            id: el.id,
+            id: el.data.id,
             img: el.data.albumOfTrack.coverArt.sources[0].url,
             title: el.data.name,
             desc: "",
