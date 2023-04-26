@@ -58,8 +58,8 @@ export default function Navbar(props) {
   }, [localStorage.getItem("access_token")]);
 
   const handleLoginClick = async () => {
-    const client_id = "f7e65796b4084a6e92eeeb4b5c415230";
-    const redirect_uri = "https://localhost:3000/home";
+    const client_id = process.env.REACT_APP_CLIENT_ID;
+    const redirect_uri = "http://localhost:3000/home";
     const api_uri = "https://accounts.spotify.com/authorize";
     const scope = [
       "user-read-private",

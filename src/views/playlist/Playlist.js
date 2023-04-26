@@ -49,8 +49,8 @@ export default function Playlist(props) {
     url: "https://spotify23.p.rapidapi.com/playlist_tracks/",
     params: { id: id, offset: "0" },
     headers: {
-      "X-RapidAPI-Key": "63b40bb6fbmshf9a5c66d0d7ab1ap12b174jsn3902feec3bbd",
-      "X-RapidAPI-Host": "spotify81.p.rapidapi.com",
+      "X-RapidAPI-Key": process.env.REACT_APP_X_RAPID_KEY,
+      "X-RapidAPI-Host": process.env.REACT_APP_X_RAPID_HOST,
     },
   };
 
@@ -59,8 +59,8 @@ export default function Playlist(props) {
     url: "https://spotify23.p.rapidapi.com/playlist/",
     params: { id: id },
     headers: {
-      "X-RapidAPI-Key": "63b40bb6fbmshf9a5c66d0d7ab1ap12b174jsn3902feec3bbd",
-      "X-RapidAPI-Host": "spotify81.p.rapidapi.com",
+      "X-RapidAPI-Key": process.env.REACT_APP_X_RAPID_KEY,
+      "X-RapidAPI-Host": process.env.REACT_APP_X_RAPID_HOST,
     },
   };
 

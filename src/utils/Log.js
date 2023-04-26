@@ -1,5 +1,5 @@
 export const LogIn = () => {
-  const client_id = "f7e65796b4084a6e92eeeb4b5c415230";
+  var client_id = process.env.REACT_APP_CLIENT_ID;
   const redirect_uri = "https://localhost:3000/home";
   const auth_uri = "https://accounts.spotify.com/authorize";
   const scopes =
