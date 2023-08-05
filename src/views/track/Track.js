@@ -61,8 +61,8 @@ export default function Track(props) {
     url: "https://spotify23.p.rapidapi.com/track_lyrics/",
     params: { id: id },
     headers: {
-      "X-RapidAPI-Key": "63b40bb6fbmshf9a5c66d0d7ab1ap12b174jsn3902feec3bbd",
-      "X-RapidAPI-Host": "spotify81.p.rapidapi.com",
+      "X-RapidAPI-Key": process.env.REACT_APP_X_RAPID_KEY,
+      "X-RapidAPI-Host": process.env.REACT_APP_X_RAPID_HOST,
     },
   };
 
@@ -83,8 +83,8 @@ export default function Track(props) {
     url: "https://spotify23.p.rapidapi.com/tracks/",
     params: { ids: id },
     headers: {
-      "X-RapidAPI-Key": "63b40bb6fbmshf9a5c66d0d7ab1ap12b174jsn3902feec3bbd",
-      "X-RapidAPI-Host": "spotify81.p.rapidapi.com",
+      "X-RapidAPI-Key": process.env.REACT_APP_X_RAPID_KEY,
+      "X-RapidAPI-Host": process.env.REACT_APP_X_RAPID_HOST,
     },
   };
   const getTrack = async () => {
@@ -103,8 +103,8 @@ export default function Track(props) {
     url: "https://spotify23.p.rapidapi.com/artist_singles/",
     params: { id: id, offset: "0", limit: "10" },
     headers: {
-      "X-RapidAPI-Key": "63b40bb6fbmshf9a5c66d0d7ab1ap12b174jsn3902feec3bbd",
-      "X-RapidAPI-Host": "spotify81.p.rapidapi.com",
+      "X-RapidAPI-Key": process.env.REACT_APP_X_RAPID_KEY,
+      "X-RapidAPI-Host": process.env.REACT_APP_X_RAPID_HOST,
     },
   };
 

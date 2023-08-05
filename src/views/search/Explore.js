@@ -128,7 +128,7 @@ export default function Explore() {
       numberOfTopResults: "5",
     },
     headers: {
-      "X-RapidAPI-Key": "63b40bb6fbmshf9a5c66d0d7ab1ap12b174jsn3902feec3bbd",
+      "X-RapidAPI-Key": process.env.REACT_APP_X_RAPID_KEY,
       "X-RapidAPI-Host": "spotify23.p.rapidapi.com",
     },
   };
