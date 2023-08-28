@@ -25,6 +25,32 @@ Rapid Api keys
 
 Make sure to not include '' or "" in env variables.
 
+# Overview
+
+### Home
+
+![Alt Text](src/assets/app-screen/home.png)
+
+### Home-read-more
+
+![Alt Text](src/assets/app-screen/home-read-more.png)
+
+### Home-read-more-view-2
+
+![Alt Text](src/assets/app-screen/home-read-more-view-2.png)
+
+### Playlist
+
+![Alt Text](src/assets/app-screen/playlist.png)
+
+### Search
+
+![Alt Text](src/assets/app-screen/search.png)
+
+### Track
+
+![Alt Text](src/assets/app-screen/song.png)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
